@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap');
 
 * {
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html, body, #content {
   height: 100%;
 }
 
@@ -20,7 +20,6 @@ html, body {
 .header{
     display: flex;
     align-items: center;
-    box-shadow: 10px 5px 5px red;
     background-color: #07689F;
 }
 .headerTitle{
@@ -45,7 +44,6 @@ html, body {
 /* -- TODOLIST -- */
 .toDoListContent{
     height: 100%;
-    background-color: black;
 }
 
 /* LEFTBAR */
@@ -54,19 +52,84 @@ html, body {
     float:left;
     width:20%;
     max-width: 250px;
+    height: 100%;
+    box-shadow: 4px 0px 4px rgb(230, 228, 228);
+    padding-top:2%;
+    
+}
+.categoryBarBtn{
+    padding-left: 8px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    margin-right:24px;
+    margin-left:24px;
+    border-radius: 5px;
+}
+.categoryBarBtn:hover{
+    background-color: #1288cc;
+    color: white;
 }
 .sidebarTitle{
     display: inline-block;
     font-family: 'Prompt', sans-serif;
-    color:#eaf2ef;
-    font-weight: 300;
+    color:#03466d;
+    font-weight: 400;
     font-size: 16px;
+    height: 100%;
+    padding-left: 8px;
+}
+.categoryIcon{
+    padding-right: 8px;
+    height: 1.5em;
+    filter: invert(16%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
 }
 
+.leftBarProjectTitle{
+    font-family: 'Prompt', sans-serif;
+    color:#03466d;
+    font-weight: 500;
+    font-size: 24px;
+    padding-left: 8px; 
+    margin-left:24px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+
+}
+
+.addProjectBtn{
+    padding-left: 8px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    margin-right:24px;
+    margin-left:24px;
+    border-radius: 5px;
+}
+.addProjectBtn:hover{
+    background-color: #1288cc;
+    color: white;
+}
+.addProjectTitle{
+    display: inline-block;
+    font-family: 'Prompt', sans-serif;
+    color:#03466d;
+    font-weight: 400;
+    font-size: 16px;
+    height: 100%;
+    padding-left: 8px;
+}
+.addProjectIcon{
+    padding-right: 8px;
+    height: 1.5em;
+    filter: invert(16%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+}
 
 /* PROJECT */
 .projectDisplay{
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 .addProjectIcon{
     filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%)
