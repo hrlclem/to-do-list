@@ -8,6 +8,10 @@
 html, body {
   height: 100%;
 }
+
+.svg{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%);
+}
     
 
 
@@ -16,7 +20,6 @@ html, body {
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     box-shadow: 10px 5px 5px red;
     background-color: #07689F;
 }
@@ -33,7 +36,7 @@ html, body {
     align-items: center;
     justify-content: center;
     width:80px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 
@@ -41,7 +44,8 @@ html, body {
 
 /* -- TODOLIST -- */
 .toDoListContent{
-    height:100%;
+    height: 100%;
+    background-color: black;
 }
 
 /* LEFTBAR */
@@ -49,6 +53,7 @@ html, body {
     background-color: #A2D5F2;
     float:left;
     width:20%;
+    max-width: 250px;
 }
 .sidebarTitle{
     display: inline-block;
@@ -63,9 +68,8 @@ html, body {
 .projectDisplay{
     background-color: #FAFAFA;
 }
-
-.svg{
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%);
+.addProjectIcon{
+    filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%)
 }
 
 
