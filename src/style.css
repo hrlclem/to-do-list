@@ -1,11 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500&display=swap');
+*{
+    margin:0;
+}
+
+/* HEADER */
+
 .header{
     background-color: #521945;
 }
+.headerTitle{
+    display: inline-block;
+    font-family: 'Prompt', sans-serif;
+    color:#eaf2ef;
+    font-size: 60px;
+}
 
+/* -- TODOLIST -- */
+
+/* LEFTBAR */
 .leftBar{
     background-color: #912f56;
 }
+.sidebarTitle{
+    display: inline-block;
+    font-family: 'Prompt', sans-serif;
+    color:#eaf2ef;
+    font-weight: 300;
+    font-size: 16px;
+}
 
+/* PROJECT */
 .projectDisplay{
-    background-color: #912f56;
+    background-color: #eaf2ef;
+}
+
+.svg{
+    filter: invert(100%) sepia(74%) saturate(158%) hue-rotate(100deg) brightness(105%) contrast(89%);
 }
