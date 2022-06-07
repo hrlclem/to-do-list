@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500&display=swap');
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+  height: 100%;
 }
     
-/* height: calc( 100% - 100px ); */
+
+
 /* HEADER */
 
 .header{
-    background-color: #07689F;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 10px 5px 5px red;
+    background-color: #07689F;
 }
 .headerTitle{
     display: inline-block;
@@ -27,7 +27,6 @@ html {
     font-size: 40px;
     padding: 20px;
     margin-right: 60px;
-
 }
 .headerIcon{
     display: flex;
@@ -41,20 +40,15 @@ html {
 
 
 /* -- TODOLIST -- */
-.todolistContent{
-    display:grid;
-    grid-template-columns: 1fr 5fr;
-    position: absolute;
-    bottom: 0;
-    height: 80%;
-    width: 100%;
+.toDoListContent{
+    height:100%;
 }
 
 /* LEFTBAR */
 .leftBar{
     background-color: #A2D5F2;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    float:left;
+    width:20%;
 }
 .sidebarTitle{
     display: inline-block;
@@ -68,8 +62,6 @@ html {
 /* PROJECT */
 .projectDisplay{
     background-color: #FAFAFA;
-    grid-column-start: 2;
-
 }
 
 .svg{
@@ -87,10 +79,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     width: 100%;
-    padding: 5px;
+    padding: 2px;
     font-family: 'Prompt', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
     color:#FAFAFA;
     background-color: #FF7E67;
 }
