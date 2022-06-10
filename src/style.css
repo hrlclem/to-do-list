@@ -66,6 +66,7 @@ html, body, #content {
     margin-right:24px;
     margin-left:24px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .categoryBarBtn:hover{
     background-color: #1288cc;
@@ -107,6 +108,7 @@ html, body, #content {
     margin-right:24px;
     margin-left:24px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .addProjectBtn:hover{
     background-color: #67b4e0;
