@@ -182,22 +182,19 @@ html, body, #content {
     grid-column-start: 2;
     grid-column-end: 5;
 
-    display: block;
+    display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #ecf0f7;
     height: calc(100vh - 120px);
     min-height: 300px;
     padding-top: 20px;
     padding-left:40px;
-    padding-right:40px;
+    padding-right:50px;
 }
 .projectDisplay{
-    display:block;
     max-width: 1000px;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    /* border: 1px solid black; */
 }
 
 .projectTitleMain{
@@ -216,8 +213,6 @@ html, body, #content {
 }
     /* Tasks */
     .taskMain{
-        display: flex;
-        align-items: center;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 8px;
