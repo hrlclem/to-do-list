@@ -184,7 +184,7 @@ html, body, #content {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     background-color: #ecf0f7;
     height: calc(100vh - 120px);
     min-height: 300px;
