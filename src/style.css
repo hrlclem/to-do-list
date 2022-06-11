@@ -84,7 +84,7 @@ html, body, #content {
 .categoryIcon{
     padding-right: 8px;
     height: 1.5em;
-    filter: invert(16%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+    filter: invert(5%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
 }
 
 .leftBarProjectTitle{
@@ -126,12 +126,15 @@ html, body, #content {
 .addProjectIcon{
     padding-right: 8px;
     height: 1.5em;
-    filter: invert(16%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+    filter: invert(5%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
 }
 
 /* PROJECT */
 .projectDisplay{
     background-color: #fafafa;
+    padding-left:20px;
+    padding-right:20px;
+
 }
 .addProjectIcon{
     filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%)
