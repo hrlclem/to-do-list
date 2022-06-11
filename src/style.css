@@ -212,6 +212,9 @@ html, body, #content {
 }
     /* Tasks */
     .taskMain{
+        display: inline-flex;
+        float: left;    
+
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 8px;
@@ -229,6 +232,9 @@ html, body, #content {
         justify-content: left;
         font-weight: 200;
         font-size: 14px;
+    }
+    .rightSideTask{
+        margin-left: auto;
     }
 
 
