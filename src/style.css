@@ -187,7 +187,6 @@ html, body, #content {
     align-items:flex-start;
     background-color: #ecf0f7;
     height: calc(100vh - 120px);
-    min-height: 300px;
     padding-top: 20px;
     padding-left:40px;
     padding-right:50px;
