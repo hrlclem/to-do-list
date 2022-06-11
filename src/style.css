@@ -108,35 +108,70 @@ html, body, #content {
 
 }
 
-.addProjectBtn{
-    padding-left: 12px;
-    padding-bottom: 6px;
-    padding-top: 6px;
-    display: flex;
-    align-items: center;
-    margin-right:24px;
-    margin-left:24px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.addProjectBtn:hover{
-    background-color: #88cbf1;
-    color: white;
-}
-.addProjectTitle{
-    display: inline-block;
-    font-family: 'Prompt', sans-serif;
-    color:#03466d;
-    font-weight: 400;
-    font-size: 16px;
-    height: 100%;
-    padding-left: 8px;
-}
-.addProjectIcon{
-    padding-right: 8px;
-    height: 1.5em;
-    filter: invert(10%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
-}
+
+    /* Projects */
+    .projectBtn{
+        padding-left: 12px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        display: flex;
+        align-items: center;
+        margin-right:24px;
+        margin-left:24px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .projectBtn:hover{
+        background-color: #88cbf1;
+        color: white;
+    }
+    .projectTitle{
+        display: inline-block;
+        font-family: 'Prompt', sans-serif;
+        color:#03466d;
+        font-weight: 400;
+        font-size: 16px;
+        height: 100%;
+        padding-left: 8px;
+    }
+    .projectIcon{
+        padding-right: 8px;
+        height: 1.5em;
+        filter: invert(10%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+    }
+
+
+    /* Add project */
+    .addProjectBtn{
+        padding-left: 12px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        display: flex;
+        align-items: center;
+        margin-right:24px;
+        margin-left:24px;
+        margin-top: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .addProjectBtn:hover{
+        background-color: #88cbf1;
+        color: white;
+    }
+    .addProjectTitle{
+        display: inline-block;
+        font-family: 'Prompt', sans-serif;
+        color:#03466d;
+        font-weight: 400;
+        font-size: 16px;
+        height: 100%;
+        padding-left: 8px;
+    }
+    .addProjectIcon{
+        padding-right: 8px;
+        height: 1.5em;
+        filter: invert(10%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+    }
 
 /* PROJECT */
 .projectDisplay{
@@ -181,35 +216,67 @@ html, body, #content {
     padding-left: 8px;
     margin-bottom: 12px;
 }
-.allTasksMain{
-    display: flex;
-}
 
-.addTasksMain{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: #88cbf1;
-    width: 100%;
-    border-radius: 5px;
+
+.allTasksMain{
+    display: block;
 }
-.addTasksMain:hover{
-    background-color: #b3d9f0;
-}
-.addTasksIconMain{
-    filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%);
-    width: 25px;
-    padding-right: 10px;
-}
-.addTasksTitleMain{
-    font-family: 'Prompt', sans-serif;
-    justify-content: left;
-    font-weight: 200;
-    font-size: 14px;
-}
+    /* Tasks */
+    .taskMain{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: #deebf3;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom:6px;
+    }
+    .taskMain:hover{
+        background-color: #b3d9f0;
+    }
+    .taskNameTitle{
+        font-family: 'Prompt', sans-serif;
+        justify-content: left;
+        font-weight: 200;
+        font-size: 14px;
+    }
+
+
+    /* Add Tasks */
+    .addTasksMain{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: #88cbf1;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom:6px;
+
+    }
+    .addTasksMain:hover{
+        background-color: #b3d9f0;
+    }
+    .addTasksIconMain{
+        filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(311deg) brightness(104%) contrast(96%);
+        width: 25px;
+        padding-right: 10px;
+    }
+    .addTasksTitleMain{
+        font-family: 'Prompt', sans-serif;
+        justify-content: left;
+        font-weight: 200;
+        font-size: 14px;
+    }
+
+
+
+
 
 
 
