@@ -1,4 +1,5 @@
 import Projects from './projects.js';
+import localStorage from './localStorage';
 
 
 export default function visualDisplay() {    
@@ -47,10 +48,9 @@ export default function visualDisplay() {
               return
             };
 
-            new Projects(projectName);
-            console.log(Projects);
-
-
+            let newProject = new Projects(projectName);
+            localStorage.allProjects.push(newProject);
+            console.log(allProjects); 
             // Automatically select this Project (active attribute)
 
         };
@@ -64,6 +64,13 @@ export default function visualDisplay() {
             addProjectBtn.style.display = "flex";
         };
     };
+
+
+
+
+// ------ PROJECT AND TASK MANAGEMENT FUNCTIONS
+
+
 
 
 
