@@ -1,4 +1,5 @@
-import showProjects from './projects.js';
+import {projectsManagement} from './projects.js';
+import {createProject} from './projects.js';
 // import localStorage from './localStorage';
 import {allProjects} from './index.js';
 
@@ -6,19 +7,18 @@ import {allProjects} from './index.js';
 
 export default function visualDisplay() { 
 
-    setToActive();
 
-    // Display to add new project
-    const allProjectsDiv = document.querySelector(".allProjectsDiv");
+const allProjectsDiv = document.querySelector(".allProjectsDiv");
 
-    allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
-    allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
-    allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
-
+// LEFT BAR BUTTONS
+allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
+allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
+allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
 
 
-// ------ DISPLAY FUNCTIONS
-    function showProjectField(e){                    // Show Add Project Field  
+
+    // Show feature to add projects
+    function showProjectField(e){
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         if (e.target.classList.contains('showAddProject')) {
@@ -34,7 +34,7 @@ export default function visualDisplay() {
         };               
     };
 
-    // Handle CONFIRM Add New Project
+    // Confirm adding project
     function confirmProjectAdd(e){
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
@@ -47,16 +47,15 @@ export default function visualDisplay() {
             // Add Project name to Project Array
             const projectName = addProjectTitleField.value
             if (projectName === '') {
-              alert("Project name can't be empty")
-              return
+                alert("Project name can't be empty")
+                return
             };
 
             createProject(projectName);
-            showProjects();
         };
     };
 
-    // Handle CANCEL Add New Project
+    // Cancel adding project
     function cancelProjectAdd(e){                   
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
@@ -67,37 +66,12 @@ export default function visualDisplay() {
     };
 
 
-    
-    
-
-// ------ PROJECT AND TASK MANAGEMENT FUNCTIONS
-
-    // Add new Project
-    function AddProject(projectTitle, projectTasks, activeState) {
-        this.projectTitle = projectTitle;
-        this.projectTasks = projectTasks;
-        this.activeState = activeState;
-    }
-
-    // Create Project 
-    function createProject(projectName){
-        let newProject = new AddProject(projectName, [] , true);
-        allProjects.push(newProject);
-    }
-
-    // On Project Click, set to Active and select
-    function setToActive(){
-        const projectBtn = document.getElementsByClassName("projectBtn");
-        
-        for (var i = 0; i < projectBtn.length; i++) {
-            projectBtn[i].addEventListener("click", function () {
-                projectBtn.toggleClass("active");
-            });
-        }
-    };
 
 
 
-    // Display to add new task in project(includes title, priority and date)
+
+
+
+// Display to add new task in project(includes title, priority and date)
 
 };

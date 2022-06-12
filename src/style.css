@@ -121,11 +121,12 @@ html, body, #content {
         border-radius: 5px;
         cursor: pointer;
     }    
-    .projectBtn:active{
+    .projectBtn.active{
         font-weight: 600;
+        background-color: #88cbf1;
     }
     .projectBtn:hover{
-        background-color: #88cbf1;
+        background-color: #67bcee;
         color: white;
     }
     .projectTitle{
