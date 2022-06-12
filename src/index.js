@@ -1,3 +1,6 @@
 import Projects from './projects.js';
+import visualDisplay from './display.js';
 
-let projectList = [];
+visualDisplay();
+
+let projectList = [{projectName: "Project 1"}];
