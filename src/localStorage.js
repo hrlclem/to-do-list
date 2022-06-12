@@ -1,7 +1,9 @@
 
 
-export default function localStorage() {    
+// export function localStorage() {    
 
-    let allProjects = [];
 
-};
+
+// };
+
+// export const allProjects = [312];

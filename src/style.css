@@ -120,6 +120,9 @@ html, body, #content {
         margin-left:24px;
         border-radius: 5px;
         cursor: pointer;
+    }    
+    .projectBtn:active{
+        font-weight: 600;
     }
     .projectBtn:hover{
         background-color: #88cbf1;
@@ -139,7 +142,18 @@ html, body, #content {
         height: 1.5em;
         filter: invert(10%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
     }
-
+    .closeIcon{
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: invert(20%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+        margin-left: auto;
+        padding-right: 8px;
+    }
+    .closeIcon:hover{
+        filter: invert(50%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
+    }
 
     /* Add project */
     .addProjectBtn{

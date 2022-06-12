@@ -1,11 +1,14 @@
-import Projects from './projects.js';
-import localStorage from './localStorage';
+import showProjects from './projects.js';
+// import localStorage from './localStorage';
+import {allProjects} from './index.js';
 
 
-export default function visualDisplay() {    
+
+export default function visualDisplay() { 
+
+    setToActive();
 
     // Display to add new project
-    const addProjectBtn = document.querySelector(".addProjectBtn");
     const allProjectsDiv = document.querySelector(".allProjectsDiv");
 
     allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
@@ -48,15 +51,13 @@ export default function visualDisplay() {
               return
             };
 
-            let newProject = new Projects(projectName);
-            localStorage.allProjects.push(newProject);
-            console.log(allProjects); 
-            // Automatically select this Project (active attribute)
-
+            createProject(projectName);
+            showProjects();
         };
     };
 
-    function cancelProjectAdd(e){                   // Handle CANCEL Add New Project
+    // Handle CANCEL Add New Project
+    function cancelProjectAdd(e){                   
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         if (e.target.classList.contains('cancelProjectBtn')) {
@@ -66,11 +67,34 @@ export default function visualDisplay() {
     };
 
 
-
+    
+    
 
 // ------ PROJECT AND TASK MANAGEMENT FUNCTIONS
 
+    // Add new Project
+    function AddProject(projectTitle, projectTasks, activeState) {
+        this.projectTitle = projectTitle;
+        this.projectTasks = projectTasks;
+        this.activeState = activeState;
+    }
 
+    // Create Project 
+    function createProject(projectName){
+        let newProject = new AddProject(projectName, [] , true);
+        allProjects.push(newProject);
+    }
+
+    // On Project Click, set to Active and select
+    function setToActive(){
+        const projectBtn = document.getElementsByClassName("projectBtn");
+        
+        for (var i = 0; i < projectBtn.length; i++) {
+            projectBtn[i].addEventListener("click", function () {
+                projectBtn.toggleClass("active");
+            });
+        }
+    };
 
 
 

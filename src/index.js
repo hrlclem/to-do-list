@@ -1,6 +1,10 @@
-import projects from './projects.js';
 import visualDisplay from './display.js';
 
+let allProjects = [];
 
-// let projectList = [{projectName: "Project 1"}];
 visualDisplay();
+
+
+
+
+export { allProjects };
