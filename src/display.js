@@ -1,4 +1,3 @@
-import { LibManifestPlugin } from 'webpack';
 import Projects from './projects.js';
 
 
@@ -6,13 +5,68 @@ export default function visualDisplay() {
 
     // Display to add new project
     const addProjectBtn = document.querySelector(".addProjectBtn");
-    addProjectBtn.addEventListener("click", function(){
-        console.log(321);
-    });
-    // Handle CANCEL Add project Btn
+    const allProjectsDiv = document.querySelector(".allProjectsDiv");
+
+    allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
+    allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
+    allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
+
+
+
+// ------ DISPLAY FUNCTIONS
+    function showProjectField(e){                    // Show Add Project Field  
+        const addProjectBtn = document.querySelector(".addProjectBtn");
+        const allProjectsDiv = document.querySelector(".allProjectsDiv");
+        if (e.target.classList.contains('showAddProject')) {
+            addProjectBtn.style.display = "none";
+            allProjectsDiv.innerHTML += `
+                <div class='addingProjectDiv'>
+                    <input type='text' class='addProjectTitleField'>
+                    <div class='newProjectButtons'>
+                        <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
+                        <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
+                    </div>
+                </div>`;
+        };               
+    };
+
+    // Handle CONFIRM Add New Project
+    function confirmProjectAdd(e){
+        const addProjectBtn = document.querySelector(".addProjectBtn");
+        const allProjectsDiv = document.querySelector(".allProjectsDiv");
+        const addProjectTitleField = document.querySelector(".addProjectTitleField");
+
+        if (e.target.classList.contains('confirmProjectBtn')) {
+            allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+            addProjectBtn.style.display = "flex";
+
+            // Add Project name to Project Array
+            const projectName = addProjectTitleField.value
+            if (projectName === '') {
+              alert("Project name can't be empty")
+              return
+            };
+
+            new Projects(projectName);
+            console.log(Projects);
+
+
+            // Automatically select this Project (active attribute)
+
+        };
+    };
+
+    function cancelProjectAdd(e){                   // Handle CANCEL Add New Project
+        const addProjectBtn = document.querySelector(".addProjectBtn");
+        const allProjectsDiv = document.querySelector(".allProjectsDiv");
+        if (e.target.classList.contains('cancelProjectBtn')) {
+            allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+            addProjectBtn.style.display = "flex";
+        };
+    };
+
 
 
     // Display to add new task in project(includes title, priority and date)
-        // Handle CANCEL Add new task Btn
 
 };

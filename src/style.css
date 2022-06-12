@@ -64,8 +64,8 @@ html, body, #content {
     min-height: 300px;
     box-shadow: 4px 0px 4px rgb(230, 228, 228);
     padding-top:8%;
-    
 }
+
 .categoryBarBtn{
     padding-left: 12px;
     padding-bottom: 6px;
@@ -173,6 +173,72 @@ html, body, #content {
         filter: invert(10%) sepia(94%) saturate(1373%) hue-rotate(178deg) brightness(95%) contrast(98%);
     }
 
+    /* Adding project Div */
+    .addingProjectDiv{
+        padding-left: 12px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        margin-right:24px;
+        margin-left:12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .addProjectTitleField{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 12px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #07689F;
+        outline: none;
+
+        width: 93%;
+
+        font-family: 'Prompt', sans-serif;
+        color:#03466d;
+        font-weight: 200;
+        font-size: 14px;
+    }
+    .newProjectButtons{
+        display:flex;
+    }
+        .confirmProjectBtn{
+            background-color: #bbeeb6;
+            border: 1px solid #35ad1d70;
+        }
+        .cancelProjectBtn{
+            margin-left:12px;
+            background-color: #ecc3c3;
+            border: 1px solid #ee909086;
+        }
+        .confirmProjectBtn:hover{
+            background-color: #8ad684;
+            border: 1px solid #35ad1d70;
+        }
+        .cancelProjectBtn:hover{
+            margin-left:12px;
+            background-color: #dfaeae;
+            border: 1px solid #ee909086;
+        }
+        .addingProjectBtn{
+            margin-top: 5px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+
+            font-size: 14px;
+            font-family: 'Prompt', sans-serif;
+            font-weight: 400;
+            color: #07689F;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
 
 
 
