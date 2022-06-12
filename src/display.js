@@ -7,7 +7,7 @@ export default function visualDisplay() {
     // Display to add new project
     const addProjectBtn = document.querySelector(".addProjectBtn");
     addProjectBtn.addEventListener("click", function(){
-        console.log(33);
+        console.log(321);
     });
     // Handle CANCEL Add project Btn
 

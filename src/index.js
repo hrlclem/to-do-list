@@ -3,4 +3,4 @@ import visualDisplay from './display.js';
 
 
 // let projectList = [{projectName: "Project 1"}];
-console.log(33);
+console.log(321);
