@@ -1,15 +1,22 @@
+import { LibManifestPlugin } from 'webpack';
+import Projects from './projects.js';
 
 
-export default function visualDisplay() {    
-    console.log(23);
+export default class visualDisplay {    
+
+    // Display to add new project
+    static addProjectDisplay() {
+        const addProjectBtn = document.querySelector(".addProjectBtn");
+        addProjectBtn.addEventListener("click", function(){
+            console.log(33);
+        });
+    };
 
 
-// Display to add new project
-const addProjectBtn = document.querySelector("addProjectBtn");
+        // Handle CANCEL Add project Btn
 
-addProjectBtn.onclick = function(){
-    console.log(22);
-}
 
-// Display to add new task in project
+    // Display to add new task in project(includes title, priority and date)
+        // Handle CANCEL Add new task Btn
+
 };
