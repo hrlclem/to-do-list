@@ -1,7 +1,7 @@
 {
   "name": "to-do-list",
   "version": "1.0.0",
-  "description": "📕 This project is a to do list to cover all areas of intermediate ES6 JS",
+  "description": "📕 This project is a TO DO LIST to cover all areas of intermediate ES6 JS",
   "main": "index.js",
   "private": true,
   "scripts": {
