@@ -256,7 +256,6 @@ html, body, #content {
         }
 
 
-
 /* -- TODOLIST -- */
 .toDoListContent{
     grid-row-start: 2;
@@ -353,7 +352,7 @@ html, body, #content {
     }
 
 
-    /* Add Tasks */
+    /* Add Tasks Btn*/
     .addTasksMain{
         display: flex;
         align-items: center;
@@ -381,6 +380,80 @@ html, body, #content {
         font-weight: 200;
         font-size: 14px;
     }
+
+    /* Create New Task */
+    .createNewTask{
+        display: block;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: #88cbf1;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom:6px;
+    }
+        .addInputTaskField{
+            display: flex;
+            padding-left: 12px;
+            padding-bottom: 3px;
+            padding-top: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #07689F;
+            background-color: #deebf3;
+            outline: none;
+
+            font-family: 'Prompt', sans-serif;
+            color:#03466d;
+            font-weight: 200;
+            font-size: 12px;
+        }
+        .lineOneDiv{
+            width:100%;
+            display:flex;
+            margin-bottom: 6px;
+        }
+            .addTaskTitleField{
+                width: 99%;
+                margin-left: 6px;
+            }
+        .lineTwoDiv{
+            width:100%;
+            display:flex;
+            justify-content: center;
+
+        }
+            .addTaskNotesField{
+                width:70%;
+                height: 150px;
+                margin-right: 6px;
+            }
+            .selectPriorityField{
+                width: 30%;
+            }
+                .selectDateProjectField{
+                }
+                .priorityTitle{
+                    font-family: 'Prompt', sans-serif;
+                    color:#03466d;
+                    font-weight: 400;
+                    font-size: 16px;
+                    margin-top: 4px;
+                }
+                .selectTaskPriority{
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    margin-top: 4px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                
+
+
 
 
 

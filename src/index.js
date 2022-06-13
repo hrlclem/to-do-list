@@ -1,4 +1,4 @@
-import visualDisplay from './display.js';
+import visualDisplay from './projectDisplay.js';
 
 let allProjects = [];
 
