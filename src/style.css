@@ -21,6 +21,15 @@ html, body, #content {
     
 
 
+
+
+
+
+
+
+
+
+
 /* HEADER */
 
 .header{
@@ -252,8 +261,24 @@ html, body, #content {
             color: #07689F;
             border-radius: 5px;
             cursor: pointer;
-
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* -- TODOLIST -- */
@@ -381,7 +406,14 @@ html, body, #content {
         font-size: 14px;
     }
 
+
+
     /* Create New Task */
+    .textField{
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-right: 4px;
+    }
     .createNewTask{
         display: block;
         align-items: center;
@@ -394,64 +426,147 @@ html, body, #content {
         border-radius: 5px;
         margin-bottom:6px;
     }
-        .addInputTaskField{
-            display: flex;
-            padding-left: 12px;
-            padding-bottom: 3px;
-            padding-top: 3px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 1px solid #07689F;
-            background-color: #deebf3;
-            outline: none;
+    .addTaskTitle{
+        font-family: 'Prompt', sans-serif;
+        color:#03466d;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 4px;
+        margin-left: 4px;
+        display: inline-block;
+    }
 
-            font-family: 'Prompt', sans-serif;
-            color:#03466d;
-            font-weight: 200;
-            font-size: 12px;
-        }
         .lineOneDiv{
-            width:100%;
             display:flex;
             margin-bottom: 6px;
         }
-            .addTaskTitleField{
-                width: 99%;
-                margin-left: 6px;
+            .addInputTaskField{
+                margin-top: 5px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100%;
             }
-        .lineTwoDiv{
-            width:100%;
-            display:flex;
-            justify-content: center;
+            .selectDateProjectField{
+                width: 30%;
+                min-width: 100px;
+                margin-left: 2px;
+                display:flex;
+                justify-content: center;            
+            }
 
+        .lineTwoDiv{
+            display:flex;
         }
-            .addTaskNotesField{
-                width:70%;
-                height: 150px;
-                margin-right: 6px;
+            .lineTwoChild{
+                margin-top: 5px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                width: 100%;
+            }
+            /* .taskInputField{
+                margin-right: 30px;
+            } */
+            .addInputTaskField{
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid #07689F;
+                background-color: #deebf3;
+                outline: none;
+        
+                font-family: 'Prompt', sans-serif;
+                color:#03466d;
+                font-weight: 200;
+                font-size: 12px;
             }
             .selectPriorityField{
-                width: 30%;
+                font-size: 14px;
+                font-family: 'Prompt', sans-serif;
+                font-weight: 400;
+                color: #07689F;
+                border-radius: 5px;
+                cursor: pointer;
             }
-                .selectDateProjectField{
-                }
-                .priorityTitle{
-                    font-family: 'Prompt', sans-serif;
-                    color:#03466d;
-                    font-weight: 400;
-                    font-size: 16px;
-                    margin-top: 4px;
-                }
                 .selectTaskPriority{
-                    display: flex;
-                    justify-content: center;
+                    width: calc(100% / 3.6);  
+                    display:inline;
+                    justify-content: flex-start;            
                     padding-top: 4px;
                     padding-bottom: 4px;
-                    margin-top: 4px;
+                    margin-bottom: 4px;
                     border-radius: 5px;
                     cursor: pointer;
                 }
-                
+                    .highPriorityTask{
+                        background-color: #f3dede;
+                        border: 1px solid #ee909086;
+                        color: #ee9090;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .highPriorityTask:hover{
+                        background-color: #ee9090;
+                        color: #f3dede;
+                    }
+                    .mediumPriorityTask{
+                        background-color: #f3ebde;
+                        border: 1px solid #f5a8024f;
+                        color: #f5a802;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }  
+                    .mediumPriorityTask:hover{
+                        background-color: #f1bf52d7;
+                        color: #f3ebde;
+                    }      
+                    .lowPriorityTask{
+                        background-color: #e0f3de;
+                        border: 1px solid #35ad1d70;
+                        color: #35ad1d;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .lowPriorityTask:hover{
+                        background-color: #44db2677;
+                        color: #e0f3de;
+                    }
+            .newTaskButtons{
+                display:flex;
+            }
+                .addingTaskBtn{
+                    margin-top: 5px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    width: 100%;
+        
+                    font-size: 14px;
+                    font-family: 'Prompt', sans-serif;
+                    font-weight: 400;
+                    color: #07689F;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .confirmTaskBtn{
+                    background-color: #bbeeb6;
+                    border: 1px solid #35ad1d70;
+                    margin-left:12px;
+                }
+                .cancelTaskBtn{
+                    background-color: #ecc3c3;
+                    border: 1px solid #ee909086;
+                }
+                .confirmTaskBtn:hover{
+                    background-color: #8ad684;
+                    border: 1px solid #35ad1d70;
+                }
+                .cancelTaskBtn:hover{
+                    background-color: #dfaeae;
+                    border: 1px solid #ee909086;
+                }
+                    
 
 
 

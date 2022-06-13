@@ -91,23 +91,22 @@
                     </div>
 
                     <div class="createNewTask">
+                        <div class="addTaskTitle">Enter your task</div>
                         <div class="lineOneDiv">
-                            <input type='text' class='addTaskProjectField addInputTaskField' placeholder="PROJECT NAME">
-                            <input type='text' class='addTaskTitleField addInputTaskField' placeholder="Title">
-                        </div>
+                            <input type='text' class='addTaskProjectField addInputTaskField textField' placeholder="PROJECT NAME">
+                            <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
+                        </div>  
                         <div class="lineTwoDiv">
-                            <input type='text' class='addTaskNotesField addInputTaskField' placeholder="Notes">
-                            <div class="selectPriorityField">
-                                <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
-                                <div class="priorityTitle">Priority</div>
-                                <div class="selectTaskPriority lowPriority">Low</div>
-                                <div class="selectTaskPriority mediumPriority">Medium</div>
-                                <div class="selectTaskPriority highPriority">High</div>
+                            <input type='text' class='taskInputField addInputTaskField textField lineTwoChild' placeholder="Task">
+                            <div class="selectPriorityField lineTwoChild">
+                                <div class="selectTaskPriority lowPriorityTask">Low</div>
+                                <div class="selectTaskPriority mediumPriorityTask">Medium</div>
+                                <div class="selectTaskPriority highPriorityTask">High</div>
                             </div>
                         </div>
-                        <div class='newProjectButtons'>
-                            <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
-                            <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
+                        <div class='newTaskButtons'>
+                            <button class='cancelTaskBtn addingTaskBtn'>Cancel</button>
+                            <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
                         </div>
                     </div>
 
