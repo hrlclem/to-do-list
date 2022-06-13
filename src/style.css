@@ -78,7 +78,7 @@ html, body, #content {
     cursor: pointer;
 }
 .categoryBarBtn:hover{
-    background-color: #88cbf1;
+    background-color: #67bcee;
     color: white;
 }
 .sidebarTitle{
@@ -170,7 +170,7 @@ html, body, #content {
         cursor: pointer;
     }
     .addProjectBtn:hover{
-        background-color: #88cbf1;
+        background-color: #67bcee;
         color: white;
     }
     .addProjectTitle{
