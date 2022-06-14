@@ -11,10 +11,7 @@ export default function taskDisplay() {
     allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
     allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
     allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
-    allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
-    allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
-    allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
-       
+    
     
     
         // Show feature to add projects
