@@ -67,11 +67,6 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
 
 
 
-
-
-
-
-
 // Display to add new task in project(includes title, priority and date)
 
 };
