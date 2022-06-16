@@ -20,22 +20,22 @@ export default function taskDisplay() {
     
         // Show feature to add tasks
         function showAddNewTask(e){
+            // Display all features in createNewTask Div
         
         };
     
         // Confirm adding task
         function confirmAddTask(e){
             // Push task title to project, priority date...
-            // Set that 
+            // Set the project pushed to Active and display all tasks
         };
     
         // Cancel adding task
-        function cancelAddTask(e){                   
-
+        function cancelAddTask(e){    
+            // Empty fields and hide ADD TASK BUTTON
         };
     
     
     
-    // Display to add new task in project(includes title, priority and date)
-    
+
     };
