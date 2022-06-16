@@ -3,34 +3,20 @@
 export default function taskDisplay() { 
 
 
-    const allTasksMain = document.querySelector(".allTasksMain");
+    const addTasksTitleMain = document.querySelector(".addTasksTitleMain");
     
     // LEFT BAR BUTTONS
-    allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Project Field
-    allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
-    allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
-    
+    addTasksTitleMain.addEventListener("click", showAddNewTask);     // Show Add New Task Field
+
     
     
         // Show feature to add projects
-        function showProjectField(e){
-            const addProjectBtn = document.querySelector(".addProjectBtn");
-            const allProjectsDiv = document.querySelector(".allProjectsDiv");
-            if (e.target.classList.contains('showAddProject')) {
-                addProjectBtn.style.display = "none";
-                allProjectsDiv.innerHTML += `
-                    <div class='addingProjectDiv'>
-                        <input type='text' class='addProjectTitleField'>
-                        <div class='newProjectButtons'>
-                            <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
-                            <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
-                        </div>
-                    </div>`;
-            };               
+        function showAddNewTask(e){
+         
         };
     
-        // Confirm adding project
-        function confirmProjectAdd(e){
+        // Confirm adding task
+        function confirmAddTask(e){
             const addProjectBtn = document.querySelector(".addProjectBtn");
             const allProjectsDiv = document.querySelector(".allProjectsDiv");
             const addProjectTitleField = document.querySelector(".addProjectTitleField");
@@ -50,8 +36,8 @@ export default function taskDisplay() {
             };
         };
     
-        // Cancel adding project
-        function cancelProjectAdd(e){                   
+        // Cancel adding task
+        function cancelAddTask(e){                   
             const addProjectBtn = document.querySelector(".addProjectBtn");
             const allProjectsDiv = document.querySelector(".allProjectsDiv");
             if (e.target.classList.contains('cancelProjectBtn')) {
