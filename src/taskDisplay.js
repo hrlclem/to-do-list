@@ -17,33 +17,33 @@ export default function taskDisplay() {
     
         // Confirm adding task
         function confirmAddTask(e){
-            const addProjectBtn = document.querySelector(".addProjectBtn");
-            const allProjectsDiv = document.querySelector(".allProjectsDiv");
-            const addProjectTitleField = document.querySelector(".addProjectTitleField");
+            // const addProjectBtn = document.querySelector(".addProjectBtn");
+            // const allProjectsDiv = document.querySelector(".allProjectsDiv");
+            // const addProjectTitleField = document.querySelector(".addProjectTitleField");
     
-            if (e.target.classList.contains('confirmProjectBtn')) {
-                allProjectsDiv.removeChild(allProjectsDiv.lastChild);
-                addProjectBtn.style.display = "flex";
+            // if (e.target.classList.contains('confirmProjectBtn')) {
+            //     allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+            //     addProjectBtn.style.display = "flex";
     
-                // Add Project name to Project Array
-                const projectName = addProjectTitleField.value
-                if (projectName === '') {
-                    alert("Project name can't be empty")
-                    return
-                };
+            //     // Add Project name to Project Array
+            //     const projectName = addProjectTitleField.value
+            //     if (projectName === '') {
+            //         alert("Project name can't be empty")
+            //         return
+            //     };
     
-                createProject(projectName);
-            };
+            //     createProject(projectName);
+            // };
         };
     
         // Cancel adding task
         function cancelAddTask(e){                   
-            const addProjectBtn = document.querySelector(".addProjectBtn");
-            const allProjectsDiv = document.querySelector(".allProjectsDiv");
-            if (e.target.classList.contains('cancelProjectBtn')) {
-                allProjectsDiv.removeChild(allProjectsDiv.lastChild);
-                addProjectBtn.style.display = "flex";
-            };
+            // const addProjectBtn = document.querySelector(".addProjectBtn");
+            // const allProjectsDiv = document.querySelector(".allProjectsDiv");
+            // if (e.target.classList.contains('cancelProjectBtn')) {
+            //     allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+            //     addProjectBtn.style.display = "flex";
+            // };
         };
     
     
