@@ -52,6 +52,9 @@ export function setToActive(){
             this.classList.add("active");
         });
     }
+
+    // TODO: Display all related tasks
+
 }
 
 // Set to Active the last entered project

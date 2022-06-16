@@ -9,6 +9,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 };
 
 
+// Show all project related tasks
 
 // Check which project is selected
 // When task is added, it pushes to the allProjects.projectTasks, for each task, add date and priority
