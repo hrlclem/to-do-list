@@ -54,6 +54,7 @@ export function setToActive(){
     }
 
     // TODO: Display all related tasks
+    // Check for already existing ones?
 
 }
 
