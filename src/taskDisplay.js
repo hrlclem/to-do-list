@@ -33,6 +33,7 @@ export default function taskDisplay() {
         // Cancel adding task
         function cancelAddTask(e){    
             // Empty fields and hide ADD TASK BUTTON
+            // Reload all tasks of dedicated project
         };
     
     
