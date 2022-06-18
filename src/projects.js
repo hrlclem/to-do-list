@@ -49,7 +49,7 @@ export function setToActive(){
         projectBtn[i].addEventListener("click", function () {
             setToInactive();
             allProjects[i].activeState = true;
-            this.classList.add("active");
+            this.classList.add("inactive");
         });
     }
 
