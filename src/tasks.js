@@ -16,3 +16,4 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 // Display all tasks of this project
 
 // Delete Tasks from related Project
+// Reload all tasks
