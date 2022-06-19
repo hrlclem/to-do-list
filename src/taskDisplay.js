@@ -27,7 +27,8 @@ export default function taskDisplay() {
         // Confirm adding task
         function confirmAddTask(e){
             // Push task title to project, priority date...
-            // Set the project pushed to Active and display all tasks
+            // Set the project pushed to Active
+            // Reload all tasks
         };
     
         // Cancel adding task
