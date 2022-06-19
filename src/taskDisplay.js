@@ -8,7 +8,7 @@ export default function taskDisplay() {
         // + select and Display all Tasks of all projects
 
         // If active: Project name
-        // + Show taks of related project
+        // + Show tasks of related project
 
 
     const addTasksTitleMain = document.querySelector(".addTasksTitleMain");
