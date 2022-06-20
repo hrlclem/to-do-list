@@ -7,7 +7,6 @@ import {allProjects} from './index.js';
 
 export default function visualDisplay() { 
 
-
 const allProjectsDiv = document.querySelector(".allProjectsDiv");
 
 // LEFT BAR BUTTONS

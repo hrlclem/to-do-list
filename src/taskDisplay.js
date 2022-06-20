@@ -11,15 +11,28 @@ export default function taskDisplay() {
         // + Show tasks of related project
 
 
-    const addTasksTitleMain = document.querySelector(".addTasksMain");
+    const newTaskManagement = document.querySelector(".newTaskManagement");
     
 
 
     // ADD TASK BUTTON
-    addTasksTitleMain.addEventListener("click", showAddNewTask);     // Show Add New Task Field
+    newTaskManagement.addEventListener("click", showAddNewTask);     // Show Add New Task Field
     
         // Show feature to add tasks
         function showAddNewTask(e){
+            const addTasksMain = document.querySelector(".addTasksMain");
+            const newTaskManagement = document.querySelector(".newTaskManagement");
+            if (e.target.classList.contains('showAddProject')) {
+                addProjectBtn.style.display = "none";
+                allProjectsDiv.innerHTML += `
+                    <div class='addingProjectDiv'>
+                        <input type='text' class='addProjectTitleField'>
+                        <div class='newProjectButtons'>
+                            <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
+                            <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
+                        </div>
+                    </div>`;
+            };        
             // Display all features in createNewTask Div
             console.log(33);
         
