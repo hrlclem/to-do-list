@@ -50,7 +50,6 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
                 alert("Project name can't be empty")
                 return
             };
-
             createProject(projectName);
         };
     };
