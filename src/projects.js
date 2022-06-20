@@ -17,7 +17,9 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 export function createProject(projectName){
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
-    displayProjectsList()
+
+    alert("yes");
+    displayProjectsList();
 }
 
 // Display all Project list
@@ -61,6 +63,7 @@ export function setToActive(){
 export function setLasttoActive(){
     const projectBtnList = document.querySelector(".projectBtnList");
     let lastChild = allProjects.length - 1;
+
     if (projectBtnList.innerHTML != ''){
         projectBtnList.lastChild.classList.add("active");
         allProjects[lastChild].activeState = true;

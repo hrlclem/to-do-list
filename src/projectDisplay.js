@@ -21,6 +21,7 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         if (e.target.classList.contains('showAddProject')) {
+
             addProjectBtn.style.display = "none";
             allProjectsDiv.innerHTML += `
                 <div class='addingProjectDiv'>
