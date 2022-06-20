@@ -22,20 +22,31 @@ export default function taskDisplay() {
         function showAddNewTask(e){
             const addTasksMain = document.querySelector(".addTasksMain");
             const newTaskManagement = document.querySelector(".newTaskManagement");
-            if (e.target.classList.contains('showAddProject')) {
-                addProjectBtn.style.display = "none";
-                allProjectsDiv.innerHTML += `
-                    <div class='addingProjectDiv'>
-                        <input type='text' class='addProjectTitleField'>
-                        <div class='newProjectButtons'>
-                            <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
-                            <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
+            console.log("working");
+            
+            if (e.target.classList.contains('showAddTask')) {
+                addTasksMain.style.display = "none";
+                newTaskManagement.innerHTML += `
+                    <div class="createNewTask">
+                        <div class="addTaskTitle">Enter your task</div>
+                        <div class="lineOneDiv">
+                            <input type='text' class='addTaskProjectField addInputTaskField textField' placeholder="PROJECT NAME">
+                            <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
+                        </div>  
+                        <div class="lineTwoDiv">
+                            <input type='text' class='taskInputField addInputTaskField textField lineTwoChild' placeholder="Task">
+                            <div class="selectPriorityField lineTwoChild">
+                                <div class="selectTaskPriority lowPriorityTask">Low</div>
+                                <div class="selectTaskPriority mediumPriorityTask">Medium</div>
+                                <div class="selectTaskPriority highPriorityTask">High</div>
+                            </div>
+                        </div>
+                        <div class='newTaskButtons'>
+                            <button class='cancelTaskBtn addingTaskBtn'>Cancel</button>
+                            <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
                         </div>
                     </div>`;
             };        
-            // Display all features in createNewTask Div
-            console.log(33);
-        
         };
     
         // Confirm adding task
