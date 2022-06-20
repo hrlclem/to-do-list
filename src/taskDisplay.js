@@ -11,7 +11,7 @@ export default function taskDisplay() {
         // + Show tasks of related project
 
 
-    const addTasksTitleMain = document.querySelector(".addTasksTitleMain");
+    const addTasksTitleMain = document.querySelector(".addTasksMain");
     
 
 
