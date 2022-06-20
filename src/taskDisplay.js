@@ -21,6 +21,7 @@ export default function taskDisplay() {
         // Show feature to add tasks
         function showAddNewTask(e){
             // Display all features in createNewTask Div
+            console.log(33);
         
         };
     
