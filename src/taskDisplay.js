@@ -1,5 +1,4 @@
 
-
 export default function taskDisplay() { 
 
     // Project title change
@@ -23,7 +22,7 @@ export default function taskDisplay() {
             const addTasksMain = document.querySelector(".addTasksMain");
             const newTaskManagement = document.querySelector(".newTaskManagement");
             console.log("working");
-            
+
             if (e.target.classList.contains('showAddTask')) {
                 addTasksMain.style.display = "none";
                 newTaskManagement.innerHTML += `
