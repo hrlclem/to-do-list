@@ -17,14 +17,18 @@ export default function taskDisplay() {
     // ADD TASK BUTTON
     newTaskManagement.addEventListener("click", showAddNewTask);     // Show Add New Task Field
     
+    newTaskManagement.addEventListener('click', cancelAddTask);     // Cancel Add Task Field
+
+
+
         // Show feature to add tasks
         function showAddNewTask(e){
-            const addTasksMain = document.querySelector(".addTasksMain");
-            const newTaskManagement = document.querySelector(".newTaskManagement");
+            const showAddTask = document.querySelector(".showAddTask");
+            const addTaskMenu = document.querySelector(".addTaskMenu");
+
 
             if (e.target.classList.contains('showAddTask')) {
-                addTasksMain.style.display = "none";
-                newTaskManagement.innerHTML += `
+                addTaskMenu.innerHTML += `
                 <div class="createNewTask">
                     <div class="addTaskTitle">Enter your task</div>
                     <div class="lineOneDiv">
@@ -44,7 +48,9 @@ export default function taskDisplay() {
                         <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
                     </div>
                 </div>`;
-            };        
+            };     
+            showAddTask.style.display = "none";
+
         };
     
         // Confirm adding task
@@ -56,6 +62,14 @@ export default function taskDisplay() {
     
         // Cancel adding task
         function cancelAddTask(e){    
+            const showAddTask = document.querySelector(".showAddTask");
+            const addTaskMenu = document.querySelector(".addTaskMenu");
+            if (e.target.classList.contains('cancelTaskBtn')) {
+                addTaskMenu.removeChild(addTaskMenu.lastChild);
+                showAddTask.style.display = "flex";
+            }; 
+
+
             // Empty fields and hide ADD TASK BUTTON
             // Reload all tasks of dedicated project or all tasks
         };

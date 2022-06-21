@@ -16,8 +16,10 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 export function createProject(projectName){
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
+    // let lastChild = allProjects.length - 1;
+    // console.log("lastChild  " + allProjects[lastChild].activeState)
+    // console.log("allProjectslength  " + allProjects.length)
 
-    alert("yes");
     displayProjectsList();
 }
 
@@ -65,7 +67,13 @@ export function setLasttoActive(){
 
     if (projectBtnList.innerHTML != ''){
         projectBtnList.lastChild.classList.add("active");
+    console.log("before lastChild  " + allProjects[lastChild].activeState)
+    console.log("before allProjectslength  " + allProjects.length)
+
         allProjects[lastChild].activeState = true;
+
+    console.log("aftr lastChild  " + allProjects[lastChild].activeState)
+    console.log("after allProjectslength  " + allProjects.length)
     }
 }
 
@@ -87,7 +95,7 @@ export function deleteProject(){
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function () {
             allProjects.splice(this.id, 1);   
-
+            
             setToInactive();
             displayProjectsList();
         });
