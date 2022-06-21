@@ -21,7 +21,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 // Create Project 
 export function createProject(projectName){
     setAllToInactive();
-    let newProject = new AddProject(projectName, [] , true);
+    let newProject = new AddProject(projectName, [] , false);
     allProjects.push(newProject);
     displayProjectsList();
 }
@@ -40,10 +40,9 @@ export function displayProjectsList() {
             <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
             <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
         </div>`;
-
-        allProjects[i].activeState = false;
     };
 
+    setAllToInactive();
     setLasttoActive();
     setToActive();
     deleteProject();
@@ -59,12 +58,9 @@ export function setToActive(){
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
             setAllToInactive();
-            allProjects[i].activeState = true;
+            allProjects[i].activeState = false;
             this.classList.add("active");
             tasksOfActiveProject();
-
-            console.log(33);
-
         });
     }
     // TODO: Display all related tasks
@@ -82,7 +78,7 @@ export function setLasttoActive(){
 
     if (projectBtnList.innerHTML != ''){
         projectBtnList.lastChild.classList.add("active");
-        allProjects[lastChild].activeState = true;
+        allProjects[lastChild].activeState = false;
     }
 }
 
@@ -126,6 +122,7 @@ export function tasksOfActiveProject(){
             if(allProjects[i].activeState = true){
                 const projectTitleMain = document.querySelector(".projectTitleMain");
                 projectTitleMain.innerHTML = `${allProjects[i].projectTitle}`;
+                console.log(allProjects[i]);
             };
         };
 };

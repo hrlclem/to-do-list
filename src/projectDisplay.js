@@ -50,7 +50,7 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
                 return
             };
             createProject(projectName);
-            // tasksOfActiveProject();
+            tasksOfActiveProject();
         };
     };
 
