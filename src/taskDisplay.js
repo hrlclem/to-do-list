@@ -21,30 +21,29 @@ export default function taskDisplay() {
         function showAddNewTask(e){
             const addTasksMain = document.querySelector(".addTasksMain");
             const newTaskManagement = document.querySelector(".newTaskManagement");
-            console.log("working");
 
             if (e.target.classList.contains('showAddTask')) {
                 addTasksMain.style.display = "none";
                 newTaskManagement.innerHTML += `
-                    <div class="createNewTask">
-                        <div class="addTaskTitle">Enter your task</div>
-                        <div class="lineOneDiv">
-                            <input type='text' class='addTaskProjectField addInputTaskField textField' placeholder="PROJECT NAME">
-                            <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
-                        </div>  
-                        <div class="lineTwoDiv">
-                            <input type='text' class='taskInputField addInputTaskField textField lineTwoChild' placeholder="Task">
-                            <div class="selectPriorityField lineTwoChild">
-                                <div class="selectTaskPriority lowPriorityTask">Low</div>
-                                <div class="selectTaskPriority mediumPriorityTask">Medium</div>
-                                <div class="selectTaskPriority highPriorityTask">High</div>
-                            </div>
+                <div class="createNewTask">
+                    <div class="addTaskTitle">Enter your task</div>
+                    <div class="lineOneDiv">
+                        <input type='text' class='addTaskProjectField addInputTaskField textField' placeholder="PROJECT NAME">
+                        <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
+                    </div>  
+                    <div class="lineTwoDiv">
+                        <input type='text' class='taskInputField addInputTaskField textField lineTwoChild' placeholder="Task">
+                        <div class="selectPriorityField lineTwoChild">
+                            <div class="selectTaskPriority lowPriorityTask">Low</div>
+                            <div class="selectTaskPriority mediumPriorityTask">Medium</div>
+                            <div class="selectTaskPriority highPriorityTask">High</div>
                         </div>
-                        <div class='newTaskButtons'>
-                            <button class='cancelTaskBtn addingTaskBtn'>Cancel</button>
-                            <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
-                        </div>
-                    </div>`;
+                    </div>
+                    <div class='newTaskButtons'>
+                        <button class='cancelTaskBtn addingTaskBtn'>Cancel</button>
+                        <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
+                    </div>
+                </div>`;
             };        
         };
     

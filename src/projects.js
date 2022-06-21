@@ -1,5 +1,4 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
-import visualDisplay from './projectDisplay.js';
 import {allProjects} from './index.js';
 
 
