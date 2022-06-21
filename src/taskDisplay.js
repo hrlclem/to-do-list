@@ -68,13 +68,6 @@ export default function taskDisplay() {
                 addTaskMenu.removeChild(addTaskMenu.lastChild);
                 showAddTask.style.display = "flex";
             }; 
-
-
-            // Empty fields and hide ADD TASK BUTTON
-            // Reload all tasks of dedicated project or all tasks
         };
     
-    
-    
-
     };

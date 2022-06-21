@@ -1,7 +1,6 @@
-import {projectsManagement} from './projects.js';
-import {createProject} from './projects.js';
+import {createProject, tasksOfActiveProject} from './projects.js';
+
 // import localStorage from './localStorage';
-import {allProjects} from './index.js';
 
 
 
@@ -51,6 +50,7 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
                 return
             };
             createProject(projectName);
+            // tasksOfActiveProject();
         };
     };
 
@@ -63,6 +63,8 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
             addProjectBtn.style.display = "flex";
         };
     };
+
+    
 
 
 
