@@ -106,7 +106,7 @@ export function deleteProject(){
         closeIcon[i].addEventListener("click", function () {
             allProjects.splice(this.id, 1);   
             
-            setAllToInactive();
+            // setAllToInactive();
             displayProjectsList();
         });
     }
@@ -119,10 +119,15 @@ export function deleteProject(){
 // On selected Project, shows related tasks and changes ProjectTitle in Right side
 export function tasksOfActiveProject(){
     for (let i = 0; i < allProjects.length; i++) {
+        const projectTitleMain = document.querySelector(".projectTitleMain");
             if(allProjects[i].activeState == true){
-                const projectTitleMain = document.querySelector(".projectTitleMain");
                 projectTitleMain.innerHTML = `${allProjects[i].projectTitle}`;
-            };
+                return;
+            }
+            else {
+                projectTitleMain.innerHTML = `All Projects`;
+                // Display all tasks of all projects
+            }
         };
 };
 
