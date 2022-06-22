@@ -21,7 +21,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 // Create Project 
 export function createProject(projectName){
     setAllToInactive();
-    let newProject = new AddProject(projectName, [] , false);
+    let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
     displayProjectsList();
 }
@@ -58,7 +58,7 @@ export function setToActive(){
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
             setAllToInactive();
-            allProjects[i].activeState = false;
+            allProjects[i].activeState = true;
             this.classList.add("active");
             tasksOfActiveProject();
         });
@@ -78,7 +78,7 @@ export function setLasttoActive(){
 
     if (projectBtnList.innerHTML != ''){
         projectBtnList.lastChild.classList.add("active");
-        allProjects[lastChild].activeState = false;
+        allProjects[lastChild].activeState = true;
     }
 }
 
@@ -119,9 +119,7 @@ export function deleteProject(){
 // On selected Project, shows related tasks and changes ProjectTitle in Right side
 export function tasksOfActiveProject(){
     for (let i = 0; i < allProjects.length; i++) {
-                        console.log(allProjects[i]);
-
-            if(allProjects[i].activeState = false){
+            if(allProjects[i].activeState == true){
                 const projectTitleMain = document.querySelector(".projectTitleMain");
                 projectTitleMain.innerHTML = `${allProjects[i].projectTitle}`;
             };
