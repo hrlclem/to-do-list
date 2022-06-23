@@ -181,6 +181,7 @@ export function deleteProject(){
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
                     // Show all tasks HERE OR HERE
+                    displayTasksList(currentActiveProject);
 
                     return;
                 }
@@ -201,6 +202,7 @@ export function deleteProject(){
             if(allProjects[i].activeState == true){
                 // i being index of the project in the array
                 currentActiveProject = i;
+                return currentActiveProject;
             }
         };
     };
