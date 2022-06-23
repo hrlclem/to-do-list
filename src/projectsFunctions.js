@@ -93,6 +93,36 @@ export function onClickSetToActive(){
     // HEEEERE
 };
 
+// Delete button
+// Delete Project from Project Array
+export function deleteProject(){
+    const closeIcon = document.getElementsByClassName("closeIcon");
+    const projectTitleMain = document.querySelector(".projectTitleMain");
+
+    for (let i = 0; i < closeIcon.length; i++) {
+        closeIcon[i].addEventListener("click", function () {
+            if(allProjects[i].activeState == true){
+                projectTitleMain.innerHTML = `All tasks`;
+                // Show all tasks
+                allProjects.splice(this.id, 1);  
+                displayProjectsList();
+            }
+            else {
+                allProjects.splice(this.id, 1);   
+                displayProjectsList();
+            }
+        });
+    }
+
+    console.log(allProjects);
+};
+
+
+
+
+
+
+
 
 
 
@@ -166,47 +196,5 @@ export function displayProjectsList() {
     onClickSetToActive();
     deleteProject();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Delete Project from Project Array
-export function deleteProject(){
-    const closeIcon = document.getElementsByClassName("closeIcon");
-
-    for (let i = 0; i < closeIcon.length; i++) {
-        closeIcon[i].addEventListener("click", function () {
-            if(allProjects[i].activeState == true){
-                const projectTitleMain = document.querySelector(".projectTitleMain");
-                projectTitleMain.innerHTML = `All tasks`;
-                allProjects.splice(this.id, 1);  
-                setAllToInactive();
-                setDivToActive();
-                displayProjectsList();
-            }
-            else {
-                allProjects.splice(this.id, 1);   
-                displayProjectsList();
-            }
-        });
-    }
-
-    console.log(allProjects);
-};
-
-
-
-
 
 
