@@ -1,13 +1,14 @@
 
 export default function taskDisplay() { 
 
-    // Project title change
     // Go through all projects:
         // if no Active: "All tasks"
         // + select and Display all Tasks of all projects
 
         // If active: Project name
         // + Show tasks of related project
+
+    // If project is changed WHILE add task is open, reload whole page
 
 
     const newTaskManagement = document.querySelector(".newTaskManagement");
@@ -25,7 +26,9 @@ export default function taskDisplay() {
         function showAddNewTask(e){
             const showAddTask = document.querySelector(".showAddTask");
             const addTaskMenu = document.querySelector(".addTaskMenu");
-
+            // Check if a project is active
+                // if true: project name already set and focus is on task
+                // if not: can choose project name and focus is on project name
 
             if (e.target.classList.contains('showAddTask')) {
                 addTaskMenu.innerHTML += `
@@ -55,9 +58,7 @@ export default function taskDisplay() {
     
         // Confirm adding task
         function confirmAddTask(e){
-            // Check if a project is active
-                // if true: project name already set and focus is on task
-                // if not: can choose project name and focus is on project name
+
             // Set priority to 
 
 

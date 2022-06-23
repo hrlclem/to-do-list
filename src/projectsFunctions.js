@@ -194,3 +194,17 @@ export function deleteProject(){
 
 
 
+    // Check if project is selected
+    export function selectedProject(){
+            let selectedStatus = false;
+            let selectedTitle = "";
+
+            for(let i = 0; i < allProjects.length; i++){
+                if(allProjects[i].activeState == true){
+                    selectedStatus = true;
+                    selectedTitle = allProjects[i].projectTitle
+                    return selectedStatus;
+                    return selectedTitle;
+                }
+            };
+
