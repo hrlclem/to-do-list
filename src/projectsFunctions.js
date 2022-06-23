@@ -1,5 +1,7 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
 import {allProjects, currentActiveProject} from './index.js';
+import {displayTasksList} from './tasksFunctions.js';
+
 
 
 
@@ -83,7 +85,6 @@ export function onClickSetToActive(){
             setDivToActive();
         });
     }
-    deleteProject();
 };
 
 // Delete button
@@ -95,8 +96,10 @@ export function deleteProject(){
         closeIcon[i].addEventListener("click", function (e) {
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
-                // Show all tasks
                 allProjects.splice(this.id, 1);  
+                // Show all tasks HERE OR HERE
+                // Display all tasks of all projects
+                // displayTasksList(currentActiveProject);
                 setAllToInactive();
                 e.stopPropagation();
                 displayProjectsList();
@@ -143,7 +146,7 @@ export function deleteProject(){
     setDivToActive();
     onClickSetToActive();
     deleteProject();
-}
+    }
 
     // Set all to Inactive
     export function setAllToInactive(){
@@ -177,15 +180,13 @@ export function deleteProject(){
             const projectTitleMain = document.querySelector(".projectTitleMain");
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
+                    // Show all tasks HERE OR HERE
+
                     return;
                 }
                 else {
                     projectTitleMain.innerHTML = `All Projects`;
-                    // Display all tasks of all projects
-                    //HEEEEEERE
-                    //HEEEEEERE
-                    //HEEEEEERE
-                    //HEEEEEERE
+                    // Show all tasks HERE OR HERE FOR ALL PROJECTS
 
                 }
             };
@@ -198,7 +199,8 @@ export function deleteProject(){
         let currentActiveProject;
         for(let i = 0; i < allProjects.length; i++){
             if(allProjects[i].activeState == true){
-                currentActiveProject = allProjects[i].projectTitle;
+                // i being index of the project in the array
+                currentActiveProject = i;
             }
         };
     };

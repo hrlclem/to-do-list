@@ -6,13 +6,22 @@ import {displayProjectsList} from './projectsFunctions';
 
 
 let allProjects = [{projectTitle: "First project", 
-                    projectTasks: ["Groceries", "Sport", "Do Japanese homeworks"], 
+                    projectTasks: {
+                        taskTitle : "Groceries", 
+                        dateTask : "Date", 
+                        priorityTask : "High"}, 
                     activeState: true},
                     {projectTitle: "Second project", 
-                    projectTasks: ["Groceries", "Sport", "Do Japanese homeworks"], 
+                    projectTasks: {
+                        taskTitle : "Groceries", 
+                        dateTask : "Date", 
+                        priorityTask : "High"}, 
                     activeState: false},
                     {projectTitle: "Third project", 
-                    projectTasks: ["Groceries", "Sport", "Do Japanese homeworks"], 
+                    projectTasks: {
+                        taskTitle : "Groceries", 
+                        dateTask : "Date", 
+                        priorityTask : "High"}, 
                     activeState: false}];
 
 
