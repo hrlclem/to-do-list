@@ -15,8 +15,11 @@ let allProjects = [{projectTitle: "First project",
                     projectTasks: ["Groceries", "Sport", "Do Japanese homeworks"], 
                     activeState: false}];
 
-                    
-export { allProjects };
+
+// Check which project is active
+let currentActiveProject;
+
+export { allProjects, currentActiveProject };
 
 
 

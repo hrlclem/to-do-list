@@ -1,5 +1,5 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
-import {allProjects} from './index.js';
+import {allProjects, currentActiveProject} from './index.js';
 
 
 
@@ -81,15 +81,9 @@ export function onClickSetToActive(){
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();
-            console.log(allProjects);
         });
     }
-
-    // TODO: Display all related tasks HEEEEEEERE
-    // HEEEERE 
-    // HEEEERE
-    // HEEEERE 
-    // HEEEERE
+    deleteProject();
 };
 
 // Delete button
@@ -99,8 +93,6 @@ export function deleteProject(){
 
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function (e) {
-            // console.log(allProjects);
-
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
                 // Show all tasks
@@ -148,9 +140,9 @@ export function deleteProject(){
         </div>`;
     };
     setDivToActive();
+    selectedProject();
     onClickSetToActive();
     deleteProject();
-    console.log(allProjects);
 }
 
     // Set all to Inactive
@@ -188,23 +180,26 @@ export function deleteProject(){
                 else {
                     projectTitleMain.innerHTML = `All Projects`;
                     // Display all tasks of all projects
+                    //HEEEEEERE
+                    //HEEEEEERE
+                    //HEEEEEERE
+                    //HEEEEEERE
+
                 }
             };
     };
 
 
 
-    // // Check if project is selected
-    // export function selectedProject(){
-    //         let selectedStatus = false;
-    //         let selectedTitle = "";
+    // Check if project is selected
+    export function selectedProject(){
+        let currentActiveProject;
 
-    //         for(let i = 0; i < allProjects.length; i++){
-    //             if(allProjects[i].activeState == true){
-    //                 selectedStatus = true;
-    //                 selectedTitle = allProjects[i].projectTitle
-    //                 return selectedStatus;
-    //                 return selectedTitle;
-    //             }
-    //         };
-
+            for(let i = 0; i < allProjects.length; i++){
+                if(allProjects[i].activeState == true){
+                    currentActiveProject = allProjects[i].projectTitle;
+                    console.log(currentActiveProject);
+                    console.log(allProjects);
+                }
+            };
+    };
