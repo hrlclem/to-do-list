@@ -3,9 +3,11 @@ import taskDisplay from './taskDisplay.js';
 
 
 let allProjects = [];
+export { allProjects };
+
+
 
 visualDisplay();
 taskDisplay();
 
 
-export { allProjects };
