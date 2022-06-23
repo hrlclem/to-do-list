@@ -52,7 +52,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
             setAllToInactive();
             createProject(projectName);
-            displayProjectsList();
+            addToProjectList();
             setDivToActive();
             // tasksOfActiveProject();  // Change title
         };
@@ -78,11 +78,14 @@ export function onClickSetToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
 
     for (let i = 0; i < projectBtn.length; i++) {
-        projectBtn[i].addEventListener("click", function () {
+        projectBtn[i].addEventListener("click", function (e) {
+            if(projectBtn[i].classList.contains('closeIcon'))
+            // On click except for closeIcon
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();
             console.log(allProjects);
+            e.stopPropagation();
         });
     }
 
@@ -101,14 +104,17 @@ export function deleteProject(){
 
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function () {
+            console.log(allProjects);
+
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
                 // Show all tasks
                 allProjects.splice(this.id, 1);  
+                setAllToInactive();
                 displayProjectsList();
             }
             else {
-                allProjects.splice(this.id, 1);   
+                allProjects.splice(this.id, 1); 
                 displayProjectsList();
             }
         });
@@ -180,8 +186,8 @@ export function deleteProject(){
 
 
 
-// Display all Project list
-export function displayProjectsList() {
+// Add to Project list
+export function addToProjectList() {
     const projectBtnList = document.querySelector(".projectBtnList");
     projectBtnList.innerHTML = "";
 
@@ -198,3 +204,20 @@ export function displayProjectsList() {
 }
 
 
+
+// Display to Project list
+export function displayProjectsList() {
+    const projectBtnList = document.querySelector(".projectBtnList");
+    projectBtnList.innerHTML = "";
+
+    for(let i = 0; i < allProjects.length; i++){
+        projectBtnList.innerHTML += `
+        <div class="projectBtn" id="${i}">
+            <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
+            <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
+            <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
+        </div>`;
+    };
+    onClickSetToActive();
+    deleteProject();
+}
