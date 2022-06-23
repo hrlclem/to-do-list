@@ -24,6 +24,7 @@ export function createProject(projectName){
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
     displayProjectsList();
+    console.log(1);
 }
 
 
@@ -46,6 +47,8 @@ export function displayProjectsList() {
     setLasttoActive();
     setToActive();
     deleteProject();
+    console.log(2);
+
 }
 
 
@@ -64,6 +67,7 @@ export function setToActive(){
         });
     }
     // TODO: Display all related tasks
+    console.log(3);
 
 }
 
@@ -80,6 +84,8 @@ export function setLasttoActive(){
         projectBtnList.lastChild.classList.add("active");
         allProjects[lastChild].activeState = true;
     }
+    console.log(4);
+
 }
 
 
@@ -94,6 +100,8 @@ export function setAllToInactive(){
             allProjects[i].activeState = false;
         }
     }
+    console.log(5);
+
 }
 
 
@@ -110,6 +118,8 @@ export function deleteProject(){
             displayProjectsList();
         });
     }
+    console.log(6);
+
 };
 
 
@@ -129,6 +139,8 @@ export function tasksOfActiveProject(){
                 // Display all tasks of all projects
             }
         };
+        console.log(5);
+
 };
 
 
