@@ -55,10 +55,39 @@ export default function taskDisplay() {
     
         // Confirm adding task
         function confirmAddTask(e){
+            // Check if a project is active
+                // if true: project name already set and focus is on task
+                // if not: can choose project name and focus is on project name
+            // Set priority to 
+
+
+            const addProjectBtn = document.querySelector(".addProjectBtn");
+            const allProjectsDiv = document.querySelector(".allProjectsDiv");
+            const addProjectTitleField = document.querySelector(".addProjectTitleField");
+            
+
+            if (e.target.classList.contains('confirmTaskBtn')) {
+                allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+                addProjectBtn.style.display = "flex";
+    
+                // Add Project name to Project Array
+                const projectName = addProjectTitleField.value
+                if (projectName === '') {
+                    alert("Project name can't be empty")
+                    return;
+                };
+    
+                setAllToInactive();
+                createProject(projectName);
+                addToProjectList();
+                setDivToActive();
+                // tasksOfActiveProject();  // Change title
+            };
             // Push task title to project, priority date...
             // Set the project pushed to Active
             // Reload all tasks
         };
+
     
         // Cancel adding task
         function cancelAddTask(e){    

@@ -23,7 +23,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
             addProjectBtn.style.display = "none";
             allProjectsDiv.innerHTML += `
                 <div class='addingProjectDiv'>
-                    <input type='text' class='addProjectTitleField'>
+                    <input type='text' class='addProjectTitleField' autofocus="autofocus" onfocus="this.select()">
                     <div class='newProjectButtons'>
                         <button class='confirmProjectBtn addingProjectBtn'>Confirm</button>
                         <button class='cancelProjectBtn addingProjectBtn'>Cancel</button>
@@ -52,7 +52,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
             setAllToInactive();
             createProject(projectName);
-            addToProjectList();
+            displayProjectsList();
             setDivToActive();
             // tasksOfActiveProject();  // Change title
         };
@@ -79,7 +79,6 @@ export function onClickSetToActive(){
 
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
-            // On click except for closeIcon
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();
@@ -95,7 +94,6 @@ export function onClickSetToActive(){
 };
 
 // Delete button
-// Delete Project from Project Array
 export function deleteProject(){
     const closeIcon = document.getElementsByClassName("closeIcon");
     const projectTitleMain = document.querySelector(".projectTitleMain");
@@ -115,14 +113,10 @@ export function deleteProject(){
             else {
                 allProjects.splice(this.id, 1); 
                 e.stopPropagation();
-                setDivToActive();
                 displayProjectsList();
-                
             }
         });
     }
-
-    console.log(allProjects);
 };
 
 
@@ -140,6 +134,24 @@ export function deleteProject(){
         let newProject = new AddProject(projectName, [] , true);
         allProjects.push(newProject);
     };
+
+    // Display to Project list
+    export function displayProjectsList() {
+    const projectBtnList = document.querySelector(".projectBtnList");
+    projectBtnList.innerHTML = "";
+
+    for(let i = 0; i < allProjects.length; i++){
+        projectBtnList.innerHTML += `
+        <div class="projectBtn" id="${i}">
+            <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
+            <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
+            <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
+        </div>`;
+    };
+    setDivToActive();
+    onClickSetToActive();
+    deleteProject();
+}
 
     // Set all to Inactive
     export function setAllToInactive(){
@@ -182,44 +194,3 @@ export function deleteProject(){
 
 
 
-
-
-
-
-
-
-// Add to Project list
-export function addToProjectList() {
-    const projectBtnList = document.querySelector(".projectBtnList");
-    projectBtnList.innerHTML = "";
-
-    for(let i = 0; i < allProjects.length; i++){
-        projectBtnList.innerHTML += `
-        <div class="projectBtn" id="${i}">
-            <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
-            <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
-            <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
-        </div>`;
-    };
-    onClickSetToActive();
-    deleteProject();
-}
-
-
-
-// Display to Project list
-export function displayProjectsList() {
-    const projectBtnList = document.querySelector(".projectBtnList");
-    projectBtnList.innerHTML = "";
-
-    for(let i = 0; i < allProjects.length; i++){
-        projectBtnList.innerHTML += `
-        <div class="projectBtn" id="${i}">
-            <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
-            <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
-            <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
-        </div>`;
-    };
-    onClickSetToActive();
-    deleteProject();
-}
