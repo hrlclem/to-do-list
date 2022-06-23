@@ -139,6 +139,7 @@ export function deleteProject(){
             <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
         </div>`;
     };
+
     setDivToActive();
     onClickSetToActive();
     deleteProject();
@@ -164,12 +165,14 @@ export function deleteProject(){
                     toSetToActive.classList.add("active");
                 }
                 tasksOfActiveProject();
+
         };
     };
 
     // On selected Project, shows related tasks and changes ProjectTitle in Right side
     export function tasksOfActiveProject(){
         selectedProject();
+
         for (let i = 0; i < allProjects.length; i++) {
             const projectTitleMain = document.querySelector(".projectTitleMain");
                 if(allProjects[i].activeState == true){
