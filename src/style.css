@@ -425,21 +425,33 @@ html, body, #content {
         border-radius: 5px;
         margin-bottom:6px;
     }
-    .addTaskTitle{
-        font-family: 'Prompt', sans-serif;
-        color:#03466d;
-        font-weight: 400;
-        font-size: 16px;
-        margin-bottom: 4px;
-        margin-left: 4px;
-        display: inline-block;
-    }
 
         .lineOneDiv{
             display:flex;
+
         }
+            .addTaskTitle{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Prompt', sans-serif;
+                color:#03466d;
+                font-weight: 400;
+                font-size: 1rem;
+                margin-left: 4px;
+                width: 300px;
+            }
             .addInputTaskField{
-                margin-top: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid #07689F;
+                background-color: #deebf3;
+                outline: none;
+                height: 20px;
+                font-family: 'Prompt', sans-serif;
+                color:#03466d;
+                font-weight: 200;
+                font-size: 12px;
                 padding-top: 4px;
                 padding-bottom: 4px;
                 padding-left: 10px;
@@ -461,21 +473,6 @@ html, body, #content {
                 margin-top: 5px;
                 width: 100%;
             }
-            .taskInputField{
-                width: 94%;
-            }
-            .addInputTaskField{
-                border-radius: 5px;
-                cursor: pointer;
-                border: 1px solid #07689F;
-                background-color: #deebf3;
-                outline: none;
-        
-                font-family: 'Prompt', sans-serif;
-                color:#03466d;
-                font-weight: 200;
-                font-size: 12px;
-            }
             .selectPriorityField{
                 display: flex;
                 align-items: center;
@@ -486,7 +483,7 @@ html, body, #content {
                 color: #07689F;
                 border-radius: 5px;
                 cursor: pointer;
-                width: 99%;
+                width: 100%;
 
             }
                 .selectTaskPriority{
@@ -495,16 +492,16 @@ html, body, #content {
                     justify-content: center;
                     padding-top: 4px;
                     padding-bottom: 4px;
+                    margin-bottom: 8px;
                     border-radius: 5px;
-                    margin-left: 4px;
                     cursor: pointer;
                     width: 100%;
-
                 }
                     .highPriorityTask{
                         background-color: #f3dede;
                         border: 1px solid #ee909086;
                         color: #ee9090;
+                        margin-left: 4px;
                         padding-left: 10px;
                         padding-right: 10px;
                     }
@@ -516,6 +513,7 @@ html, body, #content {
                         background-color: #f3ebde;
                         border: 1px solid #f5a8024f;
                         color: #f5a802;
+                        margin-left: 4px;
                         padding-left: 10px;
                         padding-right: 10px;
                     }  
@@ -571,7 +569,12 @@ html, body, #content {
                 }
                     
 
-
+                /* NOPE */
+                .cancelTaskBtn:hover{
+                    border: 1px solid #07689F;
+                    background-color: #88cbf1;
+                    background-color: #b3d9f0;
+                }
 
 
 
