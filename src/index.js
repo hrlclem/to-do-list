@@ -8,24 +8,24 @@ import displayProjectsList from './projectsFunctions';
 let allProjects = [{projectTitle: "First project", 
                     projectTasks: [
                         {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}
+                        {taskTitle : "Sport", dateTask : "Date", priorityTask : "Medium"}, 
+                        {taskTitle : "Do Japanese Homework", dateTask : "Date", priorityTask : "Low"}
                     ], 
                     activeState: true},
 
                     {projectTitle: "Second project", 
                     projectTasks: [
                         {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}
+                        {taskTitle : "Sport", dateTask : "Date", priorityTask : "Medium"}, 
+                        {taskTitle : "Do Japanese Homework", dateTask : "Date", priorityTask : "Low"}
                     ], 
                     activeState: false},
 
                     {projectTitle: "Third project", 
                     projectTasks: [
                         {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}, 
-                        {taskTitle : "Groceries", dateTask : "Date", priorityTask : "High"}
+                        {taskTitle : "Sport", dateTask : "Date", priorityTask : "Medium"}, 
+                        {taskTitle : "Do Japanese Homework", dateTask : "Date", priorityTask : "Low"}
                     ], 
                     activeState: false}];
 
