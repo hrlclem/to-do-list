@@ -48,6 +48,7 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
                 alert("Project name can't be empty")
                 return
             };
+            console.log(".1")
             createProject(projectName);
             tasksOfActiveProject();
         };

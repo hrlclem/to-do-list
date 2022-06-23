@@ -20,7 +20,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
 // Create Project 
 export function createProject(projectName){
-    setAllToInactive();
+    // setAllToInactive();
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
     displayProjectsList();
@@ -42,12 +42,11 @@ export function displayProjectsList() {
             <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
         </div>`;
     };
-
+    console.log(2);
     // setAllToInactive();
     setLasttoActive();
     setToActive();
     deleteProject();
-    console.log(2);
 
 }
 
@@ -57,7 +56,7 @@ export function displayProjectsList() {
 // Set to active on Click
 export function setToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
-    
+    console.log(3);
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
             setAllToInactive();
@@ -67,7 +66,6 @@ export function setToActive(){
         });
     }
     // TODO: Display all related tasks
-    console.log(3);
 
 }
 
@@ -79,12 +77,12 @@ export function setToActive(){
 export function setLasttoActive(){
     const projectBtnList = document.querySelector(".projectBtnList");
     let lastChild = allProjects.length - 1;
+    console.log(4);
 
     if (projectBtnList.innerHTML != ''){
         projectBtnList.lastChild.classList.add("active");
         allProjects[lastChild].activeState = true;
     }
-    console.log(4);
 
 }
 
@@ -93,6 +91,8 @@ export function setLasttoActive(){
 // Set all to Inactive
 export function setAllToInactive(){
     const activeElements = document.querySelectorAll('.active')
+    console.log(5);
+
     for (let i = 0; i < activeElements.length; i++)
     {
         activeElements[i].classList.remove("active");
@@ -100,7 +100,6 @@ export function setAllToInactive(){
             allProjects[i].activeState = false;
         }
     }
-    console.log(5);
 
 }
 
@@ -109,7 +108,8 @@ export function setAllToInactive(){
 // Delete Project from Project Array
 export function deleteProject(){
     const closeIcon = document.getElementsByClassName("closeIcon");
-    
+    console.log(6);
+
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function () {
             allProjects.splice(this.id, 1);   
@@ -118,7 +118,6 @@ export function deleteProject(){
             displayProjectsList();
         });
     }
-    console.log(6);
 
 };
 
@@ -128,6 +127,8 @@ export function deleteProject(){
 
 // On selected Project, shows related tasks and changes ProjectTitle in Right side
 export function tasksOfActiveProject(){
+    console.log(5);
+
     for (let i = 0; i < allProjects.length; i++) {
         const projectTitleMain = document.querySelector(".projectTitleMain");
             if(allProjects[i].activeState == true){
@@ -139,8 +140,6 @@ export function tasksOfActiveProject(){
                 // Display all tasks of all projects
             }
         };
-        console.log(5);
-
 };
 
 
