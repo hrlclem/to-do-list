@@ -1,4 +1,4 @@
-import {createProject, setAllToInactive, setDivToActive, displayProjectsList} from './projects.js';
+import {createProject, setAllToInactive, setDivToActive, displayProjectsList} from './projectsFunctions.js';
 
 // import localStorage from './localStorage';
 

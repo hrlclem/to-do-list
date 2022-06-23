@@ -22,8 +22,6 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 export function createProject(projectName){
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
-    console.log(1);
-
 }
 
 
@@ -32,7 +30,6 @@ export function createProject(projectName){
 export function displayProjectsList() {
     const projectBtnList = document.querySelector(".projectBtnList");
     projectBtnList.innerHTML = "";
-    console.log(2);
 
     for(let i = 0; i < allProjects.length; i++){
         projectBtnList.innerHTML += `
@@ -52,16 +49,17 @@ export function displayProjectsList() {
 // Set to active on Click
 export function onClickSetToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
-    console.log(3);
+    setAllToInactive();
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
-            setAllToInactive();
             // ISSUE HERE
-            allProjects[i].activeState = true;
+            setAllToInactive();
             setDivToActive();
+            allProjects[i].activeState = true;
             tasksOfActiveProject();
         });
     }
+
     // TODO: Display all related tasks
 };
 
@@ -70,10 +68,8 @@ export function onClickSetToActive(){
 export function setDivToActive(){
     for (let i = 0; i < allProjects.length; i++) {
             if(allProjects[i].activeState == true){
-                console.log(4);
                 let toSetToActive = document.getElementById(`${i}`);
                 toSetToActive.classList.add("active");
-                tasksOfActiveProject();
             }
     };
 }
@@ -84,7 +80,6 @@ export function setDivToActive(){
 // Set all to Inactive
 export function setAllToInactive(){
     const activeElements = document.querySelectorAll('.active')
-    console.log(5);
 
     for (let i = 0; i < activeElements.length; i++)
     {
@@ -100,23 +95,24 @@ export function setAllToInactive(){
 // Delete Project from Project Array
 export function deleteProject(){
     const closeIcon = document.getElementsByClassName("closeIcon");
-    console.log(6);
 
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function () {
             if(allProjects[i].activeState == true){
                 const projectTitleMain = document.querySelector(".projectTitleMain");
                 projectTitleMain.innerHTML = `All tasks`;
-                allProjects.splice(this.id, 1);   
+                allProjects.splice(this.id, 1);  
+                setAllToInactive();
+                setDivToActive();
                 displayProjectsList();
             }
             else {
                 allProjects.splice(this.id, 1);   
                 displayProjectsList();
             }
-            console.log("YES");
         });
     }
+
     console.log(allProjects);
 };
 
@@ -126,7 +122,6 @@ export function deleteProject(){
 
 // On selected Project, shows related tasks and changes ProjectTitle in Right side
 export function tasksOfActiveProject(){
-    console.log(7);
 
     for (let i = 0; i < allProjects.length; i++) {
         const projectTitleMain = document.querySelector(".projectTitleMain");

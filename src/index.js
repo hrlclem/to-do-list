@@ -1,5 +1,5 @@
-import visualDisplay from './projectDisplay.js';
-import taskDisplay from './taskDisplay.js';
+import visualDisplay from './projectActions.js';
+import taskDisplay from './taskActions.js';
 
 
 let allProjects = [];

@@ -1,4 +1,4 @@
-import {createProject, tasksOfActiveProject, setLasttoActive} from './projects.js';
+import {createProject, setAllToInactive, setDivToActive, displayProjectsList} from './projectsFunctions.js';
 
 // import localStorage from './localStorage';
 
@@ -32,6 +32,8 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
         };               
     };
 
+
+
     // Confirm adding project
     function confirmProjectAdd(e){
         const addProjectBtn = document.querySelector(".addProjectBtn");
@@ -50,10 +52,14 @@ allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Pr
             };
             setAllToInactive();
             createProject(projectName);
-            // setLasttoActive();
-            tasksOfActiveProject();
+            displayProjectsList();
+            setDivToActive();
+            // tasksOfActiveProject();  // Change title
         };
     };
+
+
+
 
     // Cancel adding project
     function cancelProjectAdd(e){                   
