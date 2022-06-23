@@ -140,7 +140,6 @@ export function deleteProject(){
         </div>`;
     };
     setDivToActive();
-    selectedProject();
     onClickSetToActive();
     deleteProject();
 }
@@ -170,7 +169,7 @@ export function deleteProject(){
 
     // On selected Project, shows related tasks and changes ProjectTitle in Right side
     export function tasksOfActiveProject(){
-
+        selectedProject();
         for (let i = 0; i < allProjects.length; i++) {
             const projectTitleMain = document.querySelector(".projectTitleMain");
                 if(allProjects[i].activeState == true){
@@ -194,12 +193,9 @@ export function deleteProject(){
     // Check if project is selected
     export function selectedProject(){
         let currentActiveProject;
-
-            for(let i = 0; i < allProjects.length; i++){
-                if(allProjects[i].activeState == true){
-                    currentActiveProject = allProjects[i].projectTitle;
-                    console.log(currentActiveProject);
-                    console.log(allProjects);
-                }
-            };
+        for(let i = 0; i < allProjects.length; i++){
+            if(allProjects[i].activeState == true){
+                currentActiveProject = allProjects[i].projectTitle;
+            }
+        };
     };
