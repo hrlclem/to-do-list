@@ -42,7 +42,7 @@ export function displayProjectsList() {
         </div>`;
     };
 
-    setAllToInactive();
+    // setAllToInactive();
     setLasttoActive();
     setToActive();
     deleteProject();
