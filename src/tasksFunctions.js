@@ -113,7 +113,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
     let currentProject = allProjects[selectedProject];
     
-    for(let i = 0; i < currentProject.projectTasks.length; i++){
+    for(let i = 0; i < projectTasks.length; i++){
         allTasksMain.innerHTML += `
         <div class="taskMain">
             <div class="leftSideTask">
