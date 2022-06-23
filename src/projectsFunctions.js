@@ -1,5 +1,5 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
-import {allProjects, currentActiveProject} from './index.js';
+import {allProjects} from './index.js';
 import {displayTasksList} from './tasksFunctions.js';
 
 
@@ -72,6 +72,8 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
 
 
+    
+
 
 // PROJECT ACTIONS
 // Set to active on Click
@@ -131,22 +133,21 @@ export function deleteProject(){
 
     // Display to Project list
     export function displayProjectsList() {
-    const projectBtnList = document.querySelector(".projectBtnList");
-    projectBtnList.innerHTML = "";
+        const projectBtnList = document.querySelector(".projectBtnList");
+        projectBtnList.innerHTML = "";
 
-    for(let i = 0; i < allProjects.length; i++){
-        projectBtnList.innerHTML += `
-        <div class="projectBtn" id="${i}">
-            <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
-            <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
-            <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
-        </div>`;
+        for(let i = 0; i < allProjects.length; i++){
+            projectBtnList.innerHTML += `
+            <div class="projectBtn" id="${i}">
+                <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
+                <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
+                <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
+            </div>`;
+        };
+        setDivToActive();
+        onClickSetToActive();
+        deleteProject();
     };
-
-    setDivToActive();
-    onClickSetToActive();
-    deleteProject();
-    }
 
     // Set all to Inactive
     export function setAllToInactive(){
