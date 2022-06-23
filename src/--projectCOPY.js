@@ -22,8 +22,6 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 export function createProject(projectName){
     let newProject = new AddProject(projectName, [] , true);
     allProjects.push(newProject);
-    displayProjectsList();
-    console.log(1);
 }
 
 
@@ -41,8 +39,7 @@ export function displayProjectsList() {
             <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
         </div>`;
     };
-    console.log(2);
-    setToActive();
+    onClickSetToActive();
     deleteProject();
 }
 
@@ -50,55 +47,39 @@ export function displayProjectsList() {
 
 
 // Set to active on Click
-export function setToActive(){
+export function onClickSetToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
-    console.log(3);
+    setAllToInactive();
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
-            // HEEEEEEEEERE
-            //--------
-            // HEEEEEEEEERE
-            //--------
+            // ISSUE HERE
             setAllToInactive();
+            setDivToActive();
             allProjects[i].activeState = true;
-            this.classList.add("active");
             tasksOfActiveProject();
         });
     }
+
     // TODO: Display all related tasks
-}
+};
+
 
 // Show the true active state
-export function showActive(){
+export function setDivToActive(){
     for (let i = 0; i < allProjects.length; i++) {
             if(allProjects[i].activeState == true){
-                let toSetToActive = document.getElementById(i);
+                let toSetToActive = document.getElementById(`${i}`);
                 toSetToActive.classList.add("active");
             }
-        };
+    };
 }
 
-
-
-
-
-// Set to Active the last entered project
-export function setLasttoActive(){
-    const projectBtnList = document.querySelector(".projectBtnList");
-    let lastChild = allProjects.length - 1;
-    if (projectBtnList.innerHTML != ''){
-        projectBtnList.lastChild.classList.add("active");
-        allProjects[lastChild].activeState = true;
-    }
-
-}
 
 
 
 // Set all to Inactive
 export function setAllToInactive(){
     const activeElements = document.querySelectorAll('.active')
-    console.log(5);
 
     for (let i = 0; i < activeElements.length; i++)
     {
@@ -107,22 +88,22 @@ export function setAllToInactive(){
             allProjects[i].activeState = false;
         }
     }
-
-}
+};
 
 
 
 // Delete Project from Project Array
 export function deleteProject(){
     const closeIcon = document.getElementsByClassName("closeIcon");
-    console.log(6);
 
     for (let i = 0; i < closeIcon.length; i++) {
         closeIcon[i].addEventListener("click", function () {
             if(allProjects[i].activeState == true){
                 const projectTitleMain = document.querySelector(".projectTitleMain");
                 projectTitleMain.innerHTML = `All tasks`;
-                allProjects.splice(this.id, 1);   
+                allProjects.splice(this.id, 1);  
+                setAllToInactive();
+                setDivToActive();
                 displayProjectsList();
             }
             else {
@@ -132,6 +113,7 @@ export function deleteProject(){
         });
     }
 
+    console.log(allProjects);
 };
 
 
@@ -140,7 +122,6 @@ export function deleteProject(){
 
 // On selected Project, shows related tasks and changes ProjectTitle in Right side
 export function tasksOfActiveProject(){
-    console.log(5);
 
     for (let i = 0; i < allProjects.length; i++) {
         const projectTitleMain = document.querySelector(".projectTitleMain");
