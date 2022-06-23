@@ -33,13 +33,12 @@ export default function taskDisplay() {
             if (e.target.classList.contains('showAddTask')) {
                 addTaskMenu.innerHTML += `
                 <div class="createNewTask">
-                    <div class="addTaskTitle">Enter your task</div>
                     <div class="lineOneDiv">
-                        <input type='text' class='addTaskProjectField addInputTaskField textField' placeholder="PROJECT NAME">
+                        <div class="addTaskTitle">Enter your task</div>
+                        <input type='text' class='taskInputField addInputTaskField textField' placeholder="Task">
                         <input type='date' class="selectDateProjectField addInputTaskField" placeholder="Date">
                     </div>  
                     <div class="lineTwoDiv">
-                        <input type='text' class='taskInputField addInputTaskField textField lineTwoChild' placeholder="Task">
                         <div class="selectPriorityField lineTwoChild">
                             <div class="selectTaskPriority lowPriorityTask">Low</div>
                             <div class="selectTaskPriority mediumPriorityTask">Medium</div>
@@ -47,8 +46,8 @@ export default function taskDisplay() {
                         </div>
                     </div>
                     <div class='newTaskButtons'>
-                        <button class='cancelTaskBtn addingTaskBtn'>Cancel</button>
-                        <button class='confirmTaskBtn addingTaskBtn'>Confirm</button>
+                        <button class='cancelTaskBtn addingTaskBtn'>CANCEL</button>
+                        <button class='confirmTaskBtn addingTaskBtn'>CONFIRM</button>
                     </div>
                 </div>`;
             };     

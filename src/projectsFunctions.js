@@ -54,7 +54,6 @@ export function AddProject(projectTitle, projectTasks, activeState) {
             createProject(projectName);
             displayProjectsList();
             setDivToActive();
-            // tasksOfActiveProject();  // Change title
         };
     };
 
@@ -151,6 +150,7 @@ export function deleteProject(){
     setDivToActive();
     onClickSetToActive();
     deleteProject();
+    console.log(allProjects);
 }
 
     // Set all to Inactive
