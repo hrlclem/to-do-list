@@ -596,3 +596,8 @@ html, body, #content {
     color:#FAFAFA;
     background-color: #FF7E67;
 }
+
+.void{
+    font-size: 1px;
+    height:1px;
+}

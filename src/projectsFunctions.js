@@ -78,14 +78,12 @@ export function onClickSetToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
 
     for (let i = 0; i < projectBtn.length; i++) {
-        projectBtn[i].addEventListener("click", function (e) {
-            if(projectBtn[i].classList.contains('closeIcon'))
+        projectBtn[i].addEventListener("click", function () {
             // On click except for closeIcon
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();
             console.log(allProjects);
-            e.stopPropagation();
         });
     }
 
@@ -103,19 +101,23 @@ export function deleteProject(){
     const projectTitleMain = document.querySelector(".projectTitleMain");
 
     for (let i = 0; i < closeIcon.length; i++) {
-        closeIcon[i].addEventListener("click", function () {
-            console.log(allProjects);
+        closeIcon[i].addEventListener("click", function (e) {
+            // console.log(allProjects);
 
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
                 // Show all tasks
                 allProjects.splice(this.id, 1);  
                 setAllToInactive();
+                e.stopPropagation();
                 displayProjectsList();
             }
             else {
                 allProjects.splice(this.id, 1); 
+                e.stopPropagation();
+                setDivToActive();
                 displayProjectsList();
+                
             }
         });
     }
