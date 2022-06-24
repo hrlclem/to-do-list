@@ -93,7 +93,8 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         const addTaskMenu = document.querySelector(".addTaskMenu");
         if (e.target.classList.contains('cancelTaskBtn')) {
             addTaskMenu.removeChild(addTaskMenu.lastChild);
-            showAddTask.style.display = "flex";
+            showAddTask.style.display = "block";
+
         }; 
     };
     
