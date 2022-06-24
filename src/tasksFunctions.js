@@ -109,19 +109,19 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     export function displayTasksList(selectedProject) {
     const allTasksMain = document.querySelector(".allTasksMain");
     allTasksMain.innerHTML = "";
-    console.log(22);
+    console.log("TEST3");
 
     let currentProject = allProjects[selectedProject];
     
-    for(let i = 0; i < projectTasks.length; i++){
+    for(let i = 0; i < currentProject.projectTasks.length; i++){
         allTasksMain.innerHTML += `
         <div class="taskMain">
             <div class="leftSideTask">
-                <div class="taskNameTitle leftSideTask">${currentProject.projectTasks[i].taskTitle}</div>
+                <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
             </div>
             <div class="rightSideTask">
-                <div class="taskPriority rightSideTask highPriority">${currentProject.projectTasks[i].priorityTask}</div>
-                <div class="taskNameTitle ">${currentProject.projectTasks[i].dateTask}</div>
+                <div class="taskPriority rightSideTask highPriority">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+                <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
             </div>
         </div>`;
     };
