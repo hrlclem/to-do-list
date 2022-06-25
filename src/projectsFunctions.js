@@ -72,7 +72,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
 
 
-    
+
 
 
 // PROJECT ACTIONS
@@ -131,6 +131,7 @@ export function deleteProject(){
         allProjects.push(newProject);
     };
 
+    displayProjectsList();
     // Display to Project list
     export function displayProjectsList() {
         const projectBtnList = document.querySelector(".projectBtnList");
