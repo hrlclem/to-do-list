@@ -57,33 +57,33 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     export function confirmAddTask(e){
 
 
+        console.log(22)
 
-
-        // const addProjectBtn = document.querySelector(".addProjectBtn");
-        // const allProjectsDiv = document.querySelector(".allProjectsDiv");
-        // const addProjectTitleField = document.querySelector(".addProjectTitleField");
+    //     // const addProjectBtn = document.querySelector(".addProjectBtn");
+    //     // const allProjectsDiv = document.querySelector(".allProjectsDiv");
+    //     // const addProjectTitleField = document.querySelector(".addProjectTitleField");
         
 
-        // if (e.target.classList.contains('confirmTaskBtn')) {
-        //     allProjectsDiv.removeChild(allProjectsDiv.lastChild);
-        //     addProjectBtn.style.display = "flex";
+    //     // if (e.target.classList.contains('confirmTaskBtn')) {
+    //     //     allProjectsDiv.removeChild(allProjectsDiv.lastChild);
+    //     //     addProjectBtn.style.display = "flex";
 
-        //     // Add Project name to Project Array
-        //     const projectName = addProjectTitleField.value
-        //     if (projectName === '') {
-        //         alert("Project name can't be empty")
-        //         return;
-        //     };
+    //     //     // Add Project name to Project Array
+    //     //     const projectName = addProjectTitleField.value
+    //     //     if (projectName === '') {
+    //     //         alert("Project name can't be empty")
+    //     //         return;
+    //     //     };
 
-        //     setAllToInactive();
-        //     createProject(projectName);
-        //     addToProjectList();
-        //     setDivToActive();
-        //     // tasksOfActiveProject();  // Change title
-        // };
-        // // Push task title to project, priority date...
-        // // Set the project pushed to Active
-        // // Reload all tasks
+    //     //     setAllToInactive();
+    //     //     createProject(projectName);
+    //     //     addToProjectList();
+    //     //     setDivToActive();
+    //     //     // tasksOfActiveProject();  // Change title
+    //     // };
+    //     // // Push task title to project, priority date...
+    //     // // Set the project pushed to Active
+    //     // // Reload all tasks
     };
 
         
@@ -113,18 +113,20 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     console.log("TEST3");
 
     let currentProject = allProjects[selectedProject];
+
+    console.log(currentProject);
     
-    for(let i = 0; i < currentProject.projectTasks.length; i++){
-        allTasksMain.innerHTML += `
-        <div class="taskMain">
-            <div class="leftSideTask">
-                <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
-            </div>
-            <div class="rightSideTask">
-                <div class="taskPriority rightSideTask highPriority">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-                <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
-            </div>
-        </div>`;
-    };
+    // for(let i = 0; i < currentProject.projectTasks.length; i++){
+    //     allTasksMain.innerHTML += `
+    //     <div class="taskMain">
+    //         <div class="leftSideTask">
+    //             <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
+    //         </div>
+    //         <div class="rightSideTask">
+    //             <div class="taskPriority rightSideTask highPriority">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+    //             <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+    //         </div>
+    //     </div>`;
+    // };
 }
 

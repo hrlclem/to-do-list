@@ -131,7 +131,6 @@ export function deleteProject(){
         allProjects.push(newProject);
     };
 
-    displayProjectsList();
     // Display to Project list
     export function displayProjectsList() {
         const projectBtnList = document.querySelector(".projectBtnList");
@@ -150,16 +149,16 @@ export function deleteProject(){
         deleteProject();
     };
 
+
     // Set all to Inactive
     export function setAllToInactive(){
         const activeElements = document.querySelectorAll('.active')
-        for (let i = 0; i < activeElements.length; i++)
-        {
+        for (let i = 0; i < activeElements.length; i++){
             activeElements[i].classList.remove("active");
-        }
+        };
         for(let j = 0; j < allProjects.length; j++){
             allProjects[j].activeState = false;
-        }
+        };
     };
 
     // Show the true active state

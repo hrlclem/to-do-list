@@ -1,6 +1,6 @@
 import visualDisplay from './projectActions.js';
-import taskDisplay from './taskActions.js';
 import displayProjectsList from './projectsFunctions.js';
+import taskDisplay from './taskActions.js';
 
 
 
@@ -34,7 +34,7 @@ let allProjects = [{projectTitle: "First project",
 export { allProjects };
 
 
-// displayProjectsList();
+displayProjectsList();
 
 visualDisplay();
 taskDisplay();
