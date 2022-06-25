@@ -110,7 +110,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
     let currentProject = allProjects[selectedProject];
 
-    console.log(currentProject);
+    console.log(allProjects[1].projectTasks[1].taskTitle);
     
     // for(let i = 0; i < currentProject.projectTasks.length; i++){
     //     allTasksMain.innerHTML += `

@@ -34,7 +34,6 @@ let allProjects = [{projectTitle: "First project",
 export { allProjects };
 
 
-// displayProjectsList();
 
 visualDisplay();
 taskDisplay();
