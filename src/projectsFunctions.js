@@ -13,6 +13,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
     this.activeState = activeState;
 };
 
+let currentActiveProject;
 
 
 
@@ -198,7 +199,6 @@ export function deleteProject(){
 
     // Check if project is selected
     export function selectedProject(){
-        let currentActiveProject;
         for(let i = 0; i < allProjects.length; i++){
             if(allProjects[i].activeState == true){
                 // i being index of the project in the array

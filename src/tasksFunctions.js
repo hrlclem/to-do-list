@@ -56,9 +56,6 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     // Confirm adding task
     export function confirmAddTask(e){
 
-
-        console.log(22)
-
     //     // const addProjectBtn = document.querySelector(".addProjectBtn");
     //     // const allProjectsDiv = document.querySelector(".allProjectsDiv");
     //     // const addProjectTitleField = document.querySelector(".addProjectTitleField");
@@ -110,7 +107,6 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     export function displayTasksList(selectedProject) {
     const allTasksMain = document.querySelector(".allTasksMain");
     allTasksMain.innerHTML = "";
-    console.log("TEST3");
 
     let currentProject = allProjects[selectedProject];
 
