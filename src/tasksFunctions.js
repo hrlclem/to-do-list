@@ -50,7 +50,6 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             </div>`;
         };     
         showAddTask.style.display = "none";
-
     };
         
     // Confirm adding task
