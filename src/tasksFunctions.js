@@ -49,9 +49,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
                 </div>
             </div>`;
         };     
-        showAddTask.style.display = "flex";
         showAddTask.style.display = "none";
-
 
     };
         
