@@ -107,21 +107,37 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     allTasksMain.innerHTML = "";
 
     let currentProject = allProjects[selectedProject];
-    console.log(currentProject);
 
-    console.log(allProjects[1].projectTasks[1].taskTitle);
-    
-    // for(let i = 0; i < currentProject.projectTasks.length; i++){
-    //     allTasksMain.innerHTML += `
-    //     <div class="taskMain">
-    //         <div class="leftSideTask">
-    //             <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
-    //         </div>
-    //         <div class="rightSideTask">
-    //             <div class="taskPriority rightSideTask highPriority">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-    //             <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
-    //         </div>
-    //     </div>`;
-    // };
+    for(let i = 0; i < currentProject.projectTasks.length; i++){
+        allTasksMain.innerHTML += `
+        <div class="taskMain">
+            <div class="leftSideTask">
+                <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
+            </div>
+            <div class="rightSideTask">
+                <div class="taskPriority rightSideTask">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+                <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+            </div>
+        </div>`;
+    };
+
+    priorityCheck();
 }
+
+    // Priority color check
+    export function priorityCheck() {
+        const taskPriority = document.querySelectorAll(".taskPriority");
+        for (let i = 0; i < taskPriority.length; i++){
+            if(taskPriority[i].innerHTML == "High"){
+                taskPriority[i].classList.add("highPriorityTask");
+                console.log(1);
+            }
+            if(taskPriority[i].innerHTML == "Medium"){
+                taskPriority[i].classList.add("mediumPriorityTask");
+            }
+            if(taskPriority[i].innerHTML == "Low"){
+                taskPriority[i].classList.add("lowPriorityTask");
+            }
+        };
+    }
 

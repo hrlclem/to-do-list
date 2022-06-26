@@ -102,7 +102,7 @@ export function deleteProject(){
                 allProjects.splice(this.id, 1);  
                 // Show all tasks HERE OR HERE
                 // Display all tasks of all projects
-                // displayTasksList(currentActiveProject);
+                displayTasksList(currentActiveProject);
                 setAllToInactive();
                 e.stopPropagation();
                 displayProjectsList();
