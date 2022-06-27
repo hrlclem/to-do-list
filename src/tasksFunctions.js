@@ -121,6 +121,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         allTasksMain.innerHTML += `
         <div class="taskMain">
             <div class="leftSideTask">
+                <div class="radioTask"><input type="radio" class="radioTask"></div>
                 <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
             </div>
             <div class="rightSideTask">

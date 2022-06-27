@@ -332,6 +332,12 @@ html, body, #content {
     .taskMain:hover{
         background-color: #b3d9f0;
     }
+    .leftSideTask{
+        display:flex;
+    }
+    .radioTask{
+        width:10px;
+    }
     .taskNameTitle{
         display: inline-block;
         font-family: 'Prompt', sans-serif;
