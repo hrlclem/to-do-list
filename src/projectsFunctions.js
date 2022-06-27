@@ -15,6 +15,7 @@ export function AddProject(projectTitle, projectTasks, activeState) {
 
 let currentActiveProject;
 
+export {currentActiveProject};
 
 
 // SHOW ADD PROJECTS

@@ -1,4 +1,5 @@
 import {allProjects} from './index.js';
+import {currentActiveProject} from './projectsFunctions.js';
 
 // Add task button appears only if one project is Active
 
@@ -55,32 +56,29 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     // Confirm adding task
     export function confirmAddTask(e){
 
-    //     // const addProjectBtn = document.querySelector(".addProjectBtn");
-    //     // const allProjectsDiv = document.querySelector(".allProjectsDiv");
-    //     // const addProjectTitleField = document.querySelector(".addProjectTitleField");
-        
+        const addTaskMenu = document.querySelector(".addTaskMenu");
+        const taskInputField = document.querySelector(".taskInputField");
+        const selectDateProjectField = document.querySelector(".selectDateProjectField");
 
-    //     // if (e.target.classList.contains('confirmTaskBtn')) {
-    //     //     allProjectsDiv.removeChild(allProjectsDiv.lastChild);
-    //     //     addProjectBtn.style.display = "flex";
 
-    //     //     // Add Project name to Project Array
-    //     //     const projectName = addProjectTitleField.value
-    //     //     if (projectName === '') {
-    //     //         alert("Project name can't be empty")
-    //     //         return;
-    //     //     };
+        const taskName = taskInputField.value;
+        const dateTask = selectDateProjectField.value;
+        const priorityTask = "High";
 
-    //     //     setAllToInactive();
-    //     //     createProject(projectName);
-    //     //     addToProjectList();
-    //     //     setDivToActive();
-    //     //     // tasksOfActiveProject();  // Change title
-    //     // };
-    //     // // Push task title to project, priority date...
-    //     // // Set the project pushed to Active
-    //     // // Reload all tasks
+
+        if (taskName === '') {
+                alert("Task  can't be empty")
+                return;
+            };
+
+        if (e.target.classList.contains('confirmTaskBtn')) {
+            addTaskMenu.removeChild(addTaskMenu.lastChild);
+
+
+        createTask(taskName, dateTask, priorityTask);
+        displayTasksList(currentActiveProject);
     };
+
 
         
     // Cancel adding task
@@ -101,6 +99,13 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
 
 // MIDDLE ACTIONS
+    // Create task 
+    export function createTask(taskName, dateTask, priorityTask){
+        let newTask = new Addtask(taskName, dateTask, priorityTask);
+        allProjects[currentActiveProject].projectTasks.push(newTask);
+    };
+
+
     // Display to Task list of Project
     export function displayTasksList(selectedProject) {
     const allTasksMain = document.querySelector(".allTasksMain");
