@@ -59,24 +59,27 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         const addTaskMenu = document.querySelector(".addTaskMenu");
         const taskInputField = document.querySelector(".taskInputField");
         const selectDateProjectField = document.querySelector(".selectDateProjectField");
-
+        const showAddTask = document.querySelector(".showAddTask");
 
         const taskName = taskInputField.value;
         const dateTask = selectDateProjectField.value;
         const priorityTask = "High";
 
-
-        if (taskName === '') {
-                alert("Task  can't be empty")
-                return;
-            };
-
         if (e.target.classList.contains('confirmTaskBtn')) {
+
             addTaskMenu.removeChild(addTaskMenu.lastChild);
+            showAddTask.style.display ="flex";
 
 
-        createTask(taskName, dateTask, priorityTask);
-        displayTasksList(currentActiveProject);
+            if (taskName === '') {
+                    alert("Task  can't be empty")
+                    return;
+                };
+
+            console.log("adding to array");
+            createTask(taskName, dateTask, priorityTask);
+            displayTasksList(currentActiveProject);
+        };
     };
 
 
@@ -101,7 +104,8 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 // MIDDLE ACTIONS
     // Create task 
     export function createTask(taskName, dateTask, priorityTask){
-        let newTask = new Addtask(taskName, dateTask, priorityTask);
+        let newTask = new AddTask(taskName, dateTask, priorityTask);
+        console.log("done");
         allProjects[currentActiveProject].projectTasks.push(newTask);
     };
 

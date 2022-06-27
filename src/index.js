@@ -37,6 +37,7 @@ export { allProjects };
 
 visualDisplay();
 taskDisplay();
+// displayProjectsList();
 
 
 
