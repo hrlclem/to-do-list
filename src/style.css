@@ -334,53 +334,62 @@ html, body, #content {
     }
     .leftSideTask{
         display:flex;
+        padding-left:8px;
     }
-    .radioTask{
-        width:10px;
-    }
-    .taskNameTitle{
-        display: inline-block;
-        font-family: 'Prompt', sans-serif;
-        justify-content: left;
-        font-weight: 200;
-        font-size: 14px;
-        margin-right: 10px;
-        margin-left: 20px;
-
-    }
-    .taskPriority{
-        display: inline-block;
-        font-family: 'Prompt', sans-serif;
-        justify-content: left;
-        font-weight: 200;
-        font-size: 14px;
-        margin-right: 10px;
-    }
-        .highPriority{
-            background-color: #f3dede;
-            border: 1px solid #ee909086;
-            color: #ee9090;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        .mediumPriority{
-            background-color: #f3ebde;
-            border: 1px solid #f5a8024f;
-            color: #f5a802;
-            padding-left: 10px;
-            padding-right: 10px;
-        }        
-        .lowPriority{
-            background-color: #e0f3de;
-            border: 1px solid #35ad1d70;
-            color: #35ad1d;
-            padding-left: 10px;
-            padding-right: 10px;
+        .taskNameTitle{
+            display: inline-block;
+            font-family: 'Prompt', sans-serif;
+            justify-content: left;
+            font-weight: 200;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
     .rightSideTask{
         display: inline-block;
         margin-left: auto;
     }
+        .taskPriority{
+            display: inline-block;
+            font-family: 'Prompt', sans-serif;
+            justify-content: left;
+            font-weight: 200;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+            .highPriority{
+                background-color: #f3dede;
+                border: 1px solid #ee909086;
+                color: #ee9090;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .mediumPriority{
+                background-color: #f3ebde;
+                border: 1px solid #f5a8024f;
+                color: #f5a802;
+                padding-left: 10px;
+                padding-right: 10px;
+            }        
+            .lowPriority{
+                background-color: #e0f3de;
+                border: 1px solid #35ad1d70;
+                color: #35ad1d;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        .taskDate{
+            display: inline-block;
+            font-family: 'Prompt', sans-serif;
+            justify-content: center;
+            align-items: center;
+            font-weight: 200;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-left: 10px;
+            width: 80px;
+        }
+
 
 
     /* Add Tasks Btn*/

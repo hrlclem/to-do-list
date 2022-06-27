@@ -126,7 +126,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             </div>
             <div class="rightSideTask">
                 <div class="taskPriority rightSideTask">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-                <div class="taskNameTitle ">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+                <div class="taskDate">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
             </div>
         </div>`;
     };
