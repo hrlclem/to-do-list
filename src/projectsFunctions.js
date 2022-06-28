@@ -101,16 +101,16 @@ export function deleteProject(){
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
                 allProjects.splice(this.id, 1);  
-                console.log("before")
+                selectedProject();
                 displayTasksList(currentActiveProject);
-                console.log("after")
-
                 setAllToInactive();
                 e.stopPropagation();
                 displayProjectsList();
             }
             else {
                 allProjects.splice(this.id, 1); 
+                selectedProject();
+                displayTasksList(currentActiveProject);
                 e.stopPropagation();
                 displayProjectsList();
             }
@@ -137,19 +137,32 @@ export function deleteProject(){
     // Display to Project list
     export function displayProjectsList() {
         const projectBtnList = document.querySelector(".projectBtnList");
+        const allTasksMain = document.querySelector(".allTasksMain");
+        const projectTitleMain = document.querySelector(".projectTitleMain");
+
         projectBtnList.innerHTML = "";
 
-        for(let i = 0; i < allProjects.length; i++){
-            projectBtnList.innerHTML += `
-            <div class="projectBtn" id="${i}">
-                <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
-                <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
-                <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
+        if(allProjects.length != 0){
+            for(let i = 0; i < allProjects.length; i++){
+                projectBtnList.innerHTML += `
+                <div class="projectBtn" id="${i}">
+                    <img src="../src/img/projectListIcon.svg" class="projectIcon svg" id="${i}">
+                    <div class="projectTitle" id="${i}">${allProjects[i].projectTitle}</div>
+                    <img src="../src/img/closeIcon.svg" class="closeIcon svg" id="${i}">
+                </div>`;
+            };
+            setDivToActive();
+            onClickSetToActive();
+            deleteProject();
+        }
+        else{
+            projectTitleMain.innerHTML = `Your Projects`;
+            allTasksMain.innerHTML += `
+            <div class="emptyProject">
+                    <div class="emptyDatabaseField emptyText">You don't have any project at the moment. Create one to start!</div>
             </div>`;
-        };
-        setDivToActive();
-        onClickSetToActive();
-        deleteProject();
+        }
+
     };
 
 
@@ -182,20 +195,12 @@ export function deleteProject(){
 
         for (let i = 0; i < allProjects.length; i++) {
             const projectTitleMain = document.querySelector(".projectTitleMain");
-            const showAddTask = document.querySelector(".showAddTask");
 
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
                     console.log("before" + allProjects[i].projectTitle)
                     displayTasksList(currentActiveProject);
                     return;
-                }
-                else {
-                    projectTitleMain.innerHTML = `All Projects`;
-                    // Hide Add task
-                    // showAddTask.style.display = "none";
-                    // Show all tasks
-                    displayAllTasks();
                 }
             };
     };
@@ -204,11 +209,19 @@ export function deleteProject(){
 
     // Check if project is selected
     export function selectedProject(){
+        let buffer = 0;
         for(let i = 0; i < allProjects.length; i++){
             if(allProjects[i].activeState == true){
                 // i being index of the project in the array
                 currentActiveProject = i;
+                buffer++;
                 return currentActiveProject;
             }
         };
+
+        if(buffer == 0){
+            currentActiveProject = -1;
+            buffer = 0;
+            return currentActiveProject;
+        }
     };
