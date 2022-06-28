@@ -188,7 +188,8 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         
             priorityCheck();
             deleteTask();
-    }
+    };
+    
 
     // Priority color check
     export function priorityCheck() {

@@ -1,5 +1,5 @@
 import visualDisplay from './projectActions.js';
-import displayProjectsList from './projectsFunctions.js';
+import displayAllTasks from './tasksFunctions.js';
 import taskDisplay from './taskActions.js';
 
 
@@ -37,7 +37,6 @@ export { allProjects };
 
 visualDisplay();
 taskDisplay();
-// displayProjectsList();
-
+displayAllTasks();
 
 
