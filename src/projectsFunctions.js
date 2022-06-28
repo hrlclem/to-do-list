@@ -186,8 +186,7 @@ export function deleteProject(){
 
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
-                    // Show all tasks HERE OR HERE
-                    console.log("before")
+                    console.log("before" + allProjects[i].projectTitle)
                     displayTasksList(currentActiveProject);
                     return;
                 }
@@ -197,7 +196,6 @@ export function deleteProject(){
                     // showAddTask.style.display = "none";
                     // Show all tasks
                     displayAllTasks();
-
                 }
             };
     };
@@ -210,10 +208,6 @@ export function deleteProject(){
             if(allProjects[i].activeState == true){
                 // i being index of the project in the array
                 currentActiveProject = i;
-                return currentActiveProject;
-            }
-            else if (allProjects[i].activeState != true){
-                currentActiveProject = -1;
                 return currentActiveProject;
             }
         };
