@@ -1,6 +1,6 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
 import {allProjects} from './index.js';
-import {displayTasksList} from './tasksFunctions.js';
+import {displayTasksList, displayAllTasks} from './tasksFunctions.js';
 
 
 
@@ -181,16 +181,20 @@ export function deleteProject(){
 
         for (let i = 0; i < allProjects.length; i++) {
             const projectTitleMain = document.querySelector(".projectTitleMain");
+            const showAddTask = document.querySelector(".showAddTask");
+
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
                     // Show all tasks HERE OR HERE
                     displayTasksList(currentActiveProject);
-
                     return;
                 }
                 else {
                     projectTitleMain.innerHTML = `All Projects`;
-                    // Show all tasks HERE OR HERE FOR ALL PROJECTS
+                    // Hide Add task
+                    // showAddTask.style.display = "none";
+                    // Show all tasks
+                    displayAllTasks();
 
                 }
             };
@@ -206,5 +210,9 @@ export function deleteProject(){
                 currentActiveProject = i;
                 return currentActiveProject;
             }
+            // else{
+            //     currentActiveProject = null;
+            //     return currentActiveProject;
+            // }
         };
     };

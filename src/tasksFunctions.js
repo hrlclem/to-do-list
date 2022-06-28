@@ -153,7 +153,31 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             priorityCheck();
             deleteTask();
         }
-}
+    }
+
+    // Display all tasks if no project active
+    export function displayAllTasks() {
+        const allTasksMain = document.querySelector(".allTasksMain");
+        allTasksMain.innerHTML = "";
+    
+            for(let i = 0; i < allProjects.length; i++){
+                for(let j = 0; j < allProjects[i].projectTasks.length; j++){
+                    allTasksMain.innerHTML += `
+                    <div class="taskMain" id="${i}">
+                        <div class="leftSideTask" id="${i}">
+                            <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[i].projectTasks[j].taskTitle}</div>
+                        </div>
+                        <div class="rightSideTask" id="${i}">
+                            <div class="taskPriority rightSideTask" id="${i}">${allProjects[i].projectTasks[j].priorityTask}</div>
+                            <div class="taskDate" id="${i}">${allProjects[i].projectTasks[j].dateTask}</div>
+                        </div>
+                    </div>`;
+                }
+            };
+        
+            priorityCheck();
+            deleteTask();
+    }
 
     // Priority color check
     export function priorityCheck() {
