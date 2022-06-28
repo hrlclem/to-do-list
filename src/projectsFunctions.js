@@ -101,9 +101,10 @@ export function deleteProject(){
             if(allProjects[i].activeState == true){
                 projectTitleMain.innerHTML = `All tasks`;
                 allProjects.splice(this.id, 1);  
-                // Show all tasks HERE OR HERE
-                // Display all tasks of all projects
+                console.log("before")
                 displayTasksList(currentActiveProject);
+                console.log("after")
+
                 setAllToInactive();
                 e.stopPropagation();
                 displayProjectsList();
@@ -186,6 +187,7 @@ export function deleteProject(){
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
                     // Show all tasks HERE OR HERE
+                    console.log("before")
                     displayTasksList(currentActiveProject);
                     return;
                 }
@@ -210,9 +212,9 @@ export function deleteProject(){
                 currentActiveProject = i;
                 return currentActiveProject;
             }
-            // else{
-            //     currentActiveProject = null;
-            //     return currentActiveProject;
-            // }
+            else if (allProjects[i].activeState != true){
+                currentActiveProject = -1;
+                return currentActiveProject;
+            }
         };
     };

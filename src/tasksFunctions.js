@@ -76,7 +76,6 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
                     return;
                 };
 
-            console.log("adding to array");
             createTask(taskName, dateTask, priorityTask);
             displayTasksList(currentActiveProject);
         };
@@ -117,42 +116,42 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     // Create task 
     export function createTask(taskName, dateTask, priorityTask){
         let newTask = new AddTask(taskName, dateTask, priorityTask);
-        console.log("done");
         allProjects[currentActiveProject].projectTasks.push(newTask);
     };
 
 
     // Display to Task list of Project
     export function displayTasksList(selectedProject) {
-    const allTasksMain = document.querySelector(".allTasksMain");
-    allTasksMain.innerHTML = "";
+        const allTasksMain = document.querySelector(".allTasksMain");
+        allTasksMain.innerHTML = "";
 
-    let currentProject = allProjects[selectedProject];
-
-        if(currentProject.projectTasks.length == 0){
-            allTasksMain.innerHTML += `
-            <div class="emptyProject">
-                    <div class="emptyProjectField">This project is empty, add a task to fill it!</div>
-            </div>`;
-        }
-        else {
-            for(let i = 0; i < currentProject.projectTasks.length; i++){
+        console.log("length " + allProjects[selectedProject].projectTasks)
+    
+            if(allProjects[selectedProject].projectTasks.length == 0){
                 allTasksMain.innerHTML += `
-                <div class="taskMain" id="${i}">
-                    <div class="leftSideTask" id="${i}">
-                        <img src="../src/img/checkbox.svg" class="checkboxIcon svg" id="${i}">
-                        <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
-                    </div>
-                    <div class="rightSideTask" id="${i}">
-                        <div class="taskPriority rightSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-                        <div class="taskDate" id="${i}">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
-                    </div>
+                <div class="emptyProject">
+                        <div class="emptyProjectField">This project is empty, add a task to fill it!</div>
                 </div>`;
-            };
-        
-            priorityCheck();
-            deleteTask();
-        }
+            }
+            else {
+                for(let i = 0; i < allProjects[selectedProject].projectTasks.length; i++){
+                    allTasksMain.innerHTML += `
+                    <div class="taskMain" id="${i}">
+                        <div class="leftSideTask" id="${i}">
+                            <img src="../src/img/checkbox.svg" class="checkboxIcon svg" id="${i}">
+                            <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
+                        </div>
+                        <div class="rightSideTask" id="${i}">
+                            <div class="taskPriority rightSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+                            <div class="taskDate" id="${i}">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+                        </div>
+                    </div>`;
+                };
+            
+                priorityCheck();
+                deleteTask();
+            }
+
     }
 
     // Display all tasks if no project active
@@ -185,7 +184,6 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         for (let i = 0; i < taskPriority.length; i++){
             if(taskPriority[i].innerHTML == "High"){
                 taskPriority[i].classList.add("highPriorityTask");
-                console.log(1);
             }
             if(taskPriority[i].innerHTML == "Medium"){
                 taskPriority[i].classList.add("mediumPriorityTask");
