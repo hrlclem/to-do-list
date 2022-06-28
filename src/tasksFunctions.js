@@ -99,26 +99,12 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     // Delete task
     export function deleteTask(){
 
-        const closeIcon = document.getElementsByClassName("closeIcon");
-        const projectTitleMain = document.querySelector(".projectTitleMain");
+        const checkboxIcon = document.getElementsByClassName("checkboxIcon");
     
-        for (let i = 0; i < closeIcon.length; i++) {
-            closeIcon[i].addEventListener("click", function (e) {
-                if(allProjects[i].activeState == true){
-                    projectTitleMain.innerHTML = `All tasks`;
-                    allProjects.splice(this.id, 1);  
-                    // Show all tasks HERE OR HERE
-                    // Display all tasks of all projects
-                    displayTasksList(currentActiveProject);
-                    setAllToInactive();
-                    e.stopPropagation();
-                    displayProjectsList();
-                }
-                else {
-                    allProjects.splice(this.id, 1); 
-                    e.stopPropagation();
-                    displayProjectsList();
-                }
+        for (let i = 0; i < checkboxIcon.length; i++) {
+            checkboxIcon[i].addEventListener("click", function (e) {
+                console.log("checked");
+                e.stopPropagation();
             });
         }
     };
