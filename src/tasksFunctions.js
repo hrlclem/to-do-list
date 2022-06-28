@@ -62,7 +62,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
         const showAddTask = document.querySelector(".showAddTask");
 
         const taskName = taskInputField.value;
-        const dateTask = selectDateProjectField.value;
+        const dateTask = "01/12/2022";
         const priorityTask = "High";
 
         if (e.target.classList.contains('confirmTaskBtn')) {
@@ -97,6 +97,31 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
 // PROJECT ACTIONS
     // Delete task
+    export function deleteTask(){
+
+        const closeIcon = document.getElementsByClassName("closeIcon");
+        const projectTitleMain = document.querySelector(".projectTitleMain");
+    
+        for (let i = 0; i < closeIcon.length; i++) {
+            closeIcon[i].addEventListener("click", function (e) {
+                if(allProjects[i].activeState == true){
+                    projectTitleMain.innerHTML = `All tasks`;
+                    allProjects.splice(this.id, 1);  
+                    // Show all tasks HERE OR HERE
+                    // Display all tasks of all projects
+                    displayTasksList(currentActiveProject);
+                    setAllToInactive();
+                    e.stopPropagation();
+                    displayProjectsList();
+                }
+                else {
+                    allProjects.splice(this.id, 1); 
+                    e.stopPropagation();
+                    displayProjectsList();
+                }
+            });
+        }
+    };
         // If no tasks in the project, displays: "this project has not tasks"
 
 
@@ -119,14 +144,14 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
     for(let i = 0; i < currentProject.projectTasks.length; i++){
         allTasksMain.innerHTML += `
-        <div class="taskMain">
-            <div class="leftSideTask">
-                <div class="radioTask"><input type="radio" class="radioTask"></div>
-                <div class="taskNameTitle leftSideTask">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
+        <div class="taskMain" id="${i}">
+            <div class="leftSideTask" id="${i}">
+                <img src="../src/img/checkbox.svg" class="checkboxIcon svg" id="${i}">
+                <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
             </div>
-            <div class="rightSideTask">
-                <div class="taskPriority rightSideTask">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-                <div class="taskDate">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+            <div class="rightSideTask" id="${i}">
+                <div class="taskPriority rightSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+                <div class="taskDate" id="${i}">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
             </div>
         </div>`;
     };
