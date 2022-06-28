@@ -103,8 +103,9 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     
         for (let i = 0; i < checkboxIcon.length; i++) {
             checkboxIcon[i].addEventListener("click", function (e) {
-                console.log("checked");
+                allProjects[currentActiveProject].projectTasks.splice(e.target.id, 1);  
                 e.stopPropagation();
+                displayTasksList(currentActiveProject);
             });
         }
     };
@@ -128,21 +129,30 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
     let currentProject = allProjects[selectedProject];
 
-    for(let i = 0; i < currentProject.projectTasks.length; i++){
-        allTasksMain.innerHTML += `
-        <div class="taskMain" id="${i}">
-            <div class="leftSideTask" id="${i}">
-                <img src="../src/img/checkbox.svg" class="checkboxIcon svg" id="${i}">
-                <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
-            </div>
-            <div class="rightSideTask" id="${i}">
-                <div class="taskPriority rightSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
-                <div class="taskDate" id="${i}">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
-            </div>
-        </div>`;
-    };
-
-    priorityCheck();
+        if(currentProject.projectTasks.length == 0){
+            allTasksMain.innerHTML += `
+            <div class="emptyProject">
+                    <div class="emptyProjectField">This project is empty, add a task to fill it!</div>
+            </div>`;
+        }
+        else {
+            for(let i = 0; i < currentProject.projectTasks.length; i++){
+                allTasksMain.innerHTML += `
+                <div class="taskMain" id="${i}">
+                    <div class="leftSideTask" id="${i}">
+                        <img src="../src/img/checkbox.svg" class="checkboxIcon svg" id="${i}">
+                        <div class="taskNameTitle leftSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].taskTitle}</div>
+                    </div>
+                    <div class="rightSideTask" id="${i}">
+                        <div class="taskPriority rightSideTask" id="${i}">${allProjects[selectedProject].projectTasks[i].priorityTask}</div>
+                        <div class="taskDate" id="${i}">${allProjects[selectedProject].projectTasks[i].dateTask}</div>
+                    </div>
+                </div>`;
+            };
+        
+            priorityCheck();
+            deleteTask();
+        }
 }
 
     // Priority color check
