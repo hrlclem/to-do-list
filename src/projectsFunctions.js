@@ -1,6 +1,6 @@
 // import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
 import {allProjects} from './index.js';
-import {displayTasksList, displayAllTasks} from './tasksFunctions.js';
+import {displayTasksList, hideAddTask} from './tasksFunctions.js';
 
 
 
@@ -84,6 +84,7 @@ export function onClickSetToActive(){
 
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
+            hideAddTask();
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();

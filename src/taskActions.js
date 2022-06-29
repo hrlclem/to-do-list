@@ -1,6 +1,4 @@
-import {showAddNewTask, confirmAddTask, cancelAddTask} from './tasksFunctions.js';
-import displayAllTasks from './tasksFunctions.js';
-
+import {displayAllTasks, showAddNewTask, confirmAddTask, cancelAddTask} from './tasksFunctions.js';
 
 
 
@@ -15,14 +13,5 @@ export default function taskDisplay() {
     newTaskManagement.addEventListener('click', cancelAddTask);     // Cancel Add Task Field
 
     displayAllTasks();
-
-        // Go through all projects:
-        // if no Active: "All tasks"
-        // + select and Display all Tasks of all projects
-
-        // If active: Project name
-        // + Show tasks of related project
-
-    // If project is changed WHILE add task is open, reload whole page
 
 };

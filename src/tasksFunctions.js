@@ -119,10 +119,19 @@ let priorityBuffer = "Medium";
         const showAddTask = document.querySelector(".showAddTask");
         const addTaskMenu = document.querySelector(".addTaskMenu");
         if (e.target.classList.contains('cancelTaskBtn')) {
-            addTaskMenu.removeChild(addTaskMenu.lastChild);
-            showAddTask.style.display = "block";
+            hideAddTask();
         }; 
+    };    
+    
+    export function hideAddTask(){    
+        const showAddTask = document.querySelector(".showAddTask");
+        const addTaskMenu = document.querySelector(".addTaskMenu");
+            addTaskMenu.removeChild(addTaskMenu.lastChild);
+            showAddTask.style.display = "flex";
+
     };
+
+    
     
 
 // PROJECT ACTIONS

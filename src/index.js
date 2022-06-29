@@ -10,7 +10,7 @@ let allProjects = [{projectTitle: "First project",
                         {taskTitle : "Practice Piano", dateTask : "30/05/2022", priorityTask : "Medium"}, 
                         {taskTitle : "Do Japanese Homework", dateTask : "16/02/2021", priorityTask : "Low"}
                     ], 
-                    activeState: true},
+                    activeState: false},
 
                     {projectTitle: "Second project", 
                     projectTasks: [

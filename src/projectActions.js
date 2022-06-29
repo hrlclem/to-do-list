@@ -1,5 +1,4 @@
-import {showProjectField, confirmProjectAdd, cancelProjectAdd} from './projectsFunctions.js';
-import displayProjectsList from './projectsFunctions.js';
+import {displayProjectsList, showProjectField, confirmProjectAdd, cancelProjectAdd} from './projectsFunctions.js';
 
 // import localStorage from './localStorage';
 
@@ -15,6 +14,5 @@ allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add P
 allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
 
 displayProjectsList();
-
 
 };
