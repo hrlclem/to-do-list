@@ -32,6 +32,9 @@ let allProjects = [{projectTitle: "First project",
 
 export { allProjects };
 
+// localStorage.setItem(allProjects);
+
+// console.log(localStorage.allProjects);
 
 
 visualDisplay();

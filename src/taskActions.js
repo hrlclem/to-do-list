@@ -1,4 +1,4 @@
-import {displayAllTasks, showAddNewTask, confirmAddTask, cancelAddTask} from './tasksFunctions.js';
+import {displayAllTasks, hideAddTask, showAddNewTask, confirmAddTask, cancelAddTask} from './tasksFunctions.js';
 
 
 
@@ -13,5 +13,5 @@ export default function taskDisplay() {
     newTaskManagement.addEventListener('click', cancelAddTask);     // Cancel Add Task Field
 
     displayAllTasks();
-
+    hideAddTask();
 };

@@ -84,7 +84,6 @@ export function onClickSetToActive(){
 
     for (let i = 0; i < projectBtn.length; i++) {
         projectBtn[i].addEventListener("click", function () {
-            hideAddTask();
             setAllToInactive();
             allProjects[i].activeState = true;
             setDivToActive();
