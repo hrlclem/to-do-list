@@ -1,4 +1,5 @@
 import {showProjectField, confirmProjectAdd, cancelProjectAdd} from './projectsFunctions.js';
+import displayProjectsList from './projectsFunctions.js';
 
 // import localStorage from './localStorage';
 
@@ -13,12 +14,7 @@ allProjectsDiv.addEventListener("click", showProjectField);     // Show Add Proj
 allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add Project Field
 allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
 
-    // Click to select project (change background, set to active and true, change title, show tasks);
-    // Click to delete project (split from Array)
-        // if active:       Split from Array Change title to All projects and show all tasks
-        // if not active:   Split from Array only
+displayProjectsList();
 
-
-// MAIN FIELD
 
 };
