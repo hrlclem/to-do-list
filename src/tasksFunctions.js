@@ -10,6 +10,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
     this.priorityTask = priorityTask;
 };
 
+let priorityBuffer = "Medium";
 
 // Show all project related tasks
 
@@ -51,6 +52,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             </div>`;
         };     
         showAddTask.style.display = "none";
+        prioritySelect();
     };
         
     // Confirm adding task
@@ -63,7 +65,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 
         const taskName = taskInputField.value;
         const dateTask = "01/12/2022";
-        const priorityTask = "High";
+        const priorityTask = priorityBuffer;
 
         if (e.target.classList.contains('confirmTaskBtn')) {
 
@@ -79,6 +81,45 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             createTask(taskName, dateTask, priorityTask);
             displayTasksList(currentActiveProject);
         };
+    };
+
+    // Priority selection
+    export function prioritySelect() {
+        const lowPriorityTask = document.querySelector(".lowPriorityTask");
+        const mediumPriorityTask = document.querySelector(".mediumPriorityTask");
+        const highPriorityTask = document.querySelector(".highPriorityTask");
+
+        lowPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "Low";
+
+            lowPriorityTask.classList.add("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("BnWPriority");
+            mediumPriorityTask.classList.remove("mediumPriorityTask");
+
+            highPriorityTask.classList.add("BnWPriority");
+            highPriorityTask.classList.remove("highPriorityTask");
+        })
+        mediumPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "Medium";
+            lowPriorityTask.classList.add("BnWPriority");
+            lowPriorityTask.classList.remove("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("mediumPriorityTask");
+
+            highPriorityTask.classList.add("BnWPriority");
+            highPriorityTask.classList.remove("highPriorityTask");
+        })
+        highPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "High";
+            lowPriorityTask.classList.add("BnWPriority");
+            lowPriorityTask.classList.remove("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("BnWPriority");
+            mediumPriorityTask.classList.remove("mediumPriorityTask");
+
+            highPriorityTask.classList.add("highPriorityTask");
+        })
     };
 
 
@@ -189,21 +230,23 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
             priorityCheck();
             deleteTask();
     };
-    
+
 
     // Priority color check
     export function priorityCheck() {
         const taskPriority = document.querySelectorAll(".taskPriority");
         for (let i = 0; i < taskPriority.length; i++){
             if(taskPriority[i].innerHTML == "High"){
-                taskPriority[i].classList.add("highPriorityTask");
+                taskPriority[i].classList.add("highPriorityTaskSelected");
             }
             if(taskPriority[i].innerHTML == "Medium"){
-                taskPriority[i].classList.add("mediumPriorityTask");
+                taskPriority[i].classList.add("mediumPriorityTaskSelected");
             }
             if(taskPriority[i].innerHTML == "Low"){
-                taskPriority[i].classList.add("lowPriorityTask");
+                taskPriority[i].classList.add("lowPriorityTaskSelected");
             }
         };
     }
+
+
 

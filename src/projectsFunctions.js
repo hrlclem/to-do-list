@@ -198,7 +198,6 @@ export function deleteProject(){
 
                 if(allProjects[i].activeState == true){
                     projectTitleMain.innerHTML = `${allProjects[i].projectTitle} tasks`;
-                    console.log("before" + allProjects[i].projectTitle)
                     displayTasksList(currentActiveProject);
                     return;
                 }

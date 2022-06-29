@@ -330,7 +330,7 @@ html, body, #content {
         margin-bottom:6px;
     }
     .taskMain:hover{
-        background-color: #b3d9f0;
+        background-color: #d3eaf8;
     }
     .emptyProject{
         display: flex;
@@ -534,6 +534,14 @@ html, body, #content {
                     cursor: pointer;
                     width: 50%;
                 }
+                .BnWPriority{
+                    background-color: #cac7c7;
+                    border: 1px solid #3f3e3e86;
+                    color: #3f3e3e86;
+                    margin-left: 4px;
+                    padding-left: 10px;
+                    padding-right: 10px;  
+                }
                     .highPriorityTask{
                         background-color: #f3dede;
                         border: 1px solid #ee909086;
@@ -569,6 +577,30 @@ html, body, #content {
                         background-color: #44db2677;
                         color: #e0f3de;
                     }
+                    .highPriorityTaskSelected{
+                        background-color: #f3dede;
+                        border: 1px solid #ee909086;
+                        color: #ee9090;
+                        margin-left: 4px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .mediumPriorityTaskSelected{
+                        background-color: #f3ebde;
+                        border: 1px solid #f5a8024f;
+                        color: #f5a802;
+                        margin-left: 4px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }     
+                    .lowPriorityTaskSelected{
+                        background-color: #e0f3de;
+                        border: 1px solid #35ad1d70;
+                        color: #35ad1d;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
             .newTaskButtons{
                 display:flex;
             }
