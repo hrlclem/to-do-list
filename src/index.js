@@ -2,8 +2,6 @@ import visualDisplay from './projectActions.js';
 import taskDisplay from './taskActions.js';
 
 
-
-
 let allProjects = [{projectTitle: "First project", 
                     projectTasks: [
                         {taskTitle : "Groceries", dateTask : "06/07/2022", priorityTask : "High"}, 
@@ -29,19 +27,9 @@ let allProjects = [{projectTitle: "First project",
                     activeState: false}];
 
 
-
 export { allProjects };
-
-// localStorage.setItem(allProjects);
-
-// console.log(localStorage.allProjects);
-
 
 visualDisplay();
 taskDisplay();
-
-
-
-// displayAllTasks();
 
 
