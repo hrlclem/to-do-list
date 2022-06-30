@@ -127,6 +127,8 @@ let today = new Date();
         const allTasksMain = document.querySelector(".allTasksMain");
         const projectTitleMain = document.querySelector(".projectTitleMain");
         const showAddTask = document.querySelector(".showAddTask");
+        const addTaskMenu = document.querySelector(".addTaskMenu");
+
 
         allTasksMain.innerHTML = "";
 
@@ -162,10 +164,15 @@ let today = new Date();
             showAddTask.style.display = "none";
             displayAllTasks();
         }
-    
+
+        // Hide CreateNewTask if needed
+        if (addTaskMenu.contains(document.querySelector(".createNewTask"))){
+            document.querySelector(".createNewTask").remove();
+        };
+
+};
 
 
-    }
 
     // Display all tasks if no project active
     export function displayAllTasks() {

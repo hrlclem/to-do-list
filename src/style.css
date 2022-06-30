@@ -330,6 +330,7 @@ html, body, #content {
         padding-bottom: 8px;
         background-color: #deebf3;
         width: 100%;
+        min-width: 500px;
         border-radius: 5px;
         margin-bottom:6px;
     }
