@@ -65,7 +65,7 @@ export function confirmAddTask(e) {
     showAddTask.style.display = "flex";
 
     if (taskName === "") {
-      alert("Task  can't be empty");
+      alert("Task can't be empty");
       return;
     }
 
