@@ -14,5 +14,4 @@ allProjectsDiv.addEventListener('click', confirmProjectAdd);    // Confirm Add P
 allProjectsDiv.addEventListener('click', cancelProjectAdd);     // Cancel Add Project Field
 
 displayProjectsList();
-
 };

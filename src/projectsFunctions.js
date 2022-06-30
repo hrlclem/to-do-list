@@ -20,6 +20,7 @@ export {currentActiveProject};
 // SHOW ADD PROJECTS
     // Show feature to add projects
     export function showProjectField(e){
+        console.log(1)
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         if (e.target.classList.contains('showAddProject')) {
@@ -38,6 +39,8 @@ export {currentActiveProject};
 
     // Confirm adding project
     export function confirmProjectAdd(e){
+        console.log(2)
+
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         const addProjectTitleField = document.querySelector(".addProjectTitleField");
@@ -62,7 +65,9 @@ export {currentActiveProject};
 
 
     // Cancel adding project
-    export function cancelProjectAdd(e){                   
+    export function cancelProjectAdd(e){  
+        console.log(3)
+                 
         const addProjectBtn = document.querySelector(".addProjectBtn");
         const allProjectsDiv = document.querySelector(".allProjectsDiv");
         if (e.target.classList.contains('cancelProjectBtn')) {
@@ -79,6 +84,8 @@ export {currentActiveProject};
 // PROJECT ACTIONS
 // Set to active on Click
 function onClickSetToActive(){
+    console.log(4)
+
     const projectBtn = document.getElementsByClassName("projectBtn");
 
     for (let i = 0; i < projectBtn.length; i++) {
@@ -92,6 +99,8 @@ function onClickSetToActive(){
 
 // Delete button
 function deleteProject(){
+    console.log(5)
+
     const closeIcon = document.getElementsByClassName("closeIcon");
     const projectTitleMain = document.querySelector(".projectTitleMain");
 
@@ -135,6 +144,8 @@ function deleteProject(){
 
     // Display to Project list
     export function displayProjectsList() {
+        console.log(7)
+
         const projectBtnList = document.querySelector(".projectBtnList");
         const allTasksMain = document.querySelector(".allTasksMain");
         const projectTitleMain = document.querySelector(".projectTitleMain");
@@ -167,6 +178,8 @@ function deleteProject(){
 
     // Set all to Inactive
     function setAllToInactive(){
+        console.log(8)
+
         const activeElements = document.querySelectorAll('.active')
         for (let i = 0; i < activeElements.length; i++){
             activeElements[i].classList.remove("active");
@@ -177,7 +190,9 @@ function deleteProject(){
     };
 
     // Show the true active state
-    function setDivToActive(){
+    function setDivToActive(){        console.log(9)
+
+
         for (let i = 0; i < allProjects.length; i++) {
                 if(allProjects[i].activeState == true){
                     let toSetToActive = document.getElementById(`${i}`);
@@ -190,6 +205,8 @@ function deleteProject(){
 
     // On selected Project, shows related tasks and changes ProjectTitle in Right side
     function tasksOfActiveProject(){
+        console.log(10)
+
         selectedProject();
 
         for (let i = 0; i < allProjects.length; i++) {
@@ -207,6 +224,8 @@ function deleteProject(){
 
     // Check if project is selected
     function selectedProject(){
+        console.log(11)
+
         let buffer = 0;
         for(let i = 0; i < allProjects.length; i++){
             if(allProjects[i].activeState == true){
