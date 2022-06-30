@@ -1,5 +1,5 @@
 import {allProjects} from './index.js';
-import {cancelProjectAdd, currentActiveProject} from './projectsFunctions.js';
+import {currentActiveProject} from './projectsFunctions.js';
 
 
 // Add task button appears only if one project is Active
@@ -58,14 +58,11 @@ let today = new Date();
         let taskName = taskInputField.value;
         let dateTask = dateFormating(today);
         let priorityTask = priorityBuffer;
-
         let selectedDate = selectedDateFormating(selectDateProjectField.value);
-        console.log(selectedDate);
 
-        // if(dateTask != selectedDate){
-        //     // console.log("checked");
-        //     dateTask = selectedDate;
-        // }
+        if(selectedDate != -5){
+            dateTask = selectedDate;
+        }
 
         if (e.target.classList.contains('confirmTaskBtn')) {
 
@@ -81,48 +78,9 @@ let today = new Date();
             
             createTask(taskName, dateTask, priorityTask);
             displayTasksList(currentActiveProject);
+            priorityBuffer = "Medium";
         };
     };
-
-    // Priority selection
-    export function prioritySelect() {
-        const lowPriorityTask = document.querySelector(".lowPriorityTask");
-        const mediumPriorityTask = document.querySelector(".mediumPriorityTask");
-        const highPriorityTask = document.querySelector(".highPriorityTask");
-
-        lowPriorityTask.addEventListener("click", function () {
-            priorityBuffer = "Low";
-
-            lowPriorityTask.classList.add("lowPriorityTask");
-
-            mediumPriorityTask.classList.add("BnWPriority");
-            mediumPriorityTask.classList.remove("mediumPriorityTask");
-
-            highPriorityTask.classList.add("BnWPriority");
-            highPriorityTask.classList.remove("highPriorityTask");
-        })
-        mediumPriorityTask.addEventListener("click", function () {
-            priorityBuffer = "Medium";
-            lowPriorityTask.classList.add("BnWPriority");
-            lowPriorityTask.classList.remove("lowPriorityTask");
-
-            mediumPriorityTask.classList.add("mediumPriorityTask");
-
-            highPriorityTask.classList.add("BnWPriority");
-            highPriorityTask.classList.remove("highPriorityTask");
-        })
-        highPriorityTask.addEventListener("click", function () {
-            priorityBuffer = "High";
-            lowPriorityTask.classList.add("BnWPriority");
-            lowPriorityTask.classList.remove("lowPriorityTask");
-
-            mediumPriorityTask.classList.add("BnWPriority");
-            mediumPriorityTask.classList.remove("mediumPriorityTask");
-
-            highPriorityTask.classList.add("highPriorityTask");
-        })
-    };
-
 
         
     // Cancel adding task
@@ -149,7 +107,7 @@ let today = new Date();
 
 // PROJECT ACTIONS
     // Delete task
-    export function deleteTask(){
+    function deleteTask(){
 
         const checkboxIcon = document.getElementsByClassName("checkboxIcon");
     
@@ -245,7 +203,7 @@ let today = new Date();
 
 
     // Priority color check
-    export function priorityCheck() {
+    function priorityCheck() {
         const taskPriority = document.querySelectorAll(".taskPriority");
         for (let i = 0; i < taskPriority.length; i++){
             if(taskPriority[i].innerHTML == "High"){
@@ -275,22 +233,65 @@ let today = new Date();
         return date;
     }
 
-        // Selected date formating
-        function selectedDateFormating(date) {
-            let selectedDate = date.split('-');
-            let yyyy = selectedDate[0];
-            console.log("yyy"+yyyy)
-            let mm = selectedDate[1];
-            console.log("mm"+mm)
-            let dd = selectedDate[2];
-            console.log("dd"+dd)
+    // Selected date formating
+    function selectedDateFormating(date) {
+        let selectedDate = date.split('-');
+        let yyyy = selectedDate[0];
+        let mm = selectedDate[1];
+        let dd = selectedDate[2];
+        date = dd + '/' + mm + '/' + yyyy;
 
-            
-            date = dd + '/' + mm + '/' + yyyy;
-            
-            return date;
+        let dateChecker = -5;
+
+        if(dd == undefined){
+            return dateChecker; 
         }
 
+        return date;
+    }
+
+
+    // Priority selection
+    function prioritySelect() {
+        const lowPriorityTask = document.querySelector(".lowPriorityTask");
+        const mediumPriorityTask = document.querySelector(".mediumPriorityTask");
+        const highPriorityTask = document.querySelector(".highPriorityTask");
+
+        lowPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "Low";
+
+            lowPriorityTask.classList.add("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("BnWPriority");
+            mediumPriorityTask.classList.remove("mediumPriorityTask");
+
+            highPriorityTask.classList.add("BnWPriority");
+            highPriorityTask.classList.remove("highPriorityTask");
+        })
+        mediumPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "Medium";
+            lowPriorityTask.classList.add("BnWPriority");
+            lowPriorityTask.classList.remove("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("mediumPriorityTask");
+
+            highPriorityTask.classList.add("BnWPriority");
+            highPriorityTask.classList.remove("highPriorityTask");
+        })
+        highPriorityTask.addEventListener("click", function () {
+            priorityBuffer = "High";
+            lowPriorityTask.classList.add("BnWPriority");
+            lowPriorityTask.classList.remove("lowPriorityTask");
+
+            mediumPriorityTask.classList.add("BnWPriority");
+            mediumPriorityTask.classList.remove("mediumPriorityTask");
+
+            highPriorityTask.classList.add("highPriorityTask");
+        })
+    };
+
+
+    
 
 
 

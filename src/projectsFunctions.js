@@ -1,5 +1,5 @@
 import {allProjects} from './index.js';
-import {displayTasksList, hideAddTask} from './tasksFunctions.js';
+import {displayTasksList} from './tasksFunctions.js';
 
 
 
@@ -78,7 +78,7 @@ export {currentActiveProject};
 
 // PROJECT ACTIONS
 // Set to active on Click
-export function onClickSetToActive(){
+function onClickSetToActive(){
     const projectBtn = document.getElementsByClassName("projectBtn");
 
     for (let i = 0; i < projectBtn.length; i++) {
@@ -91,7 +91,7 @@ export function onClickSetToActive(){
 };
 
 // Delete button
-export function deleteProject(){
+function deleteProject(){
     const closeIcon = document.getElementsByClassName("closeIcon");
     const projectTitleMain = document.querySelector(".projectTitleMain");
 
@@ -128,7 +128,7 @@ export function deleteProject(){
 
 // MIDDLE ACTIONS
     // Create Project 
-    export function createProject(projectName){
+    function createProject(projectName){
         let newProject = new AddProject(projectName, [] , true);
         allProjects.push(newProject);
     };
@@ -166,7 +166,7 @@ export function deleteProject(){
 
 
     // Set all to Inactive
-    export function setAllToInactive(){
+    function setAllToInactive(){
         const activeElements = document.querySelectorAll('.active')
         for (let i = 0; i < activeElements.length; i++){
             activeElements[i].classList.remove("active");
@@ -177,7 +177,7 @@ export function deleteProject(){
     };
 
     // Show the true active state
-    export function setDivToActive(){
+    function setDivToActive(){
         for (let i = 0; i < allProjects.length; i++) {
                 if(allProjects[i].activeState == true){
                     let toSetToActive = document.getElementById(`${i}`);
@@ -189,7 +189,7 @@ export function deleteProject(){
     };
 
     // On selected Project, shows related tasks and changes ProjectTitle in Right side
-    export function tasksOfActiveProject(){
+    function tasksOfActiveProject(){
         selectedProject();
 
         for (let i = 0; i < allProjects.length; i++) {
@@ -206,7 +206,7 @@ export function deleteProject(){
 
 
     // Check if project is selected
-    export function selectedProject(){
+    function selectedProject(){
         let buffer = 0;
         for(let i = 0; i < allProjects.length; i++){
             if(allProjects[i].activeState == true){
