@@ -1,8 +1,5 @@
 import {displayProjectsList, showProjectField, confirmProjectAdd, cancelProjectAdd} from './projectsFunctions.js';
 
-// import localStorage from './localStorage';
-
-
 
 export default function visualDisplay() { 
 

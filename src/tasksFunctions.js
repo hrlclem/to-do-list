@@ -2,8 +2,6 @@ import {allProjects} from './index.js';
 import {currentActiveProject} from './projectsFunctions.js';
 
 
-// Add task button appears only if one project is Active
-
 // Task constructor
 export function AddTask(taskTitle, dateTask, priorityTask) {
     this.taskTitle = taskTitle;
@@ -49,7 +47,6 @@ let today = new Date();
         
     // Confirm adding task
     export function confirmAddTask(e){
-
         const addTaskMenu = document.querySelector(".addTaskMenu");
         const taskInputField = document.querySelector(".taskInputField");
         const selectDateProjectField = document.querySelector(".selectDateProjectField");
@@ -65,17 +62,14 @@ let today = new Date();
         }
 
         if (e.target.classList.contains('confirmTaskBtn')) {
-
             addTaskMenu.removeChild(addTaskMenu.lastChild);
             showAddTask.style.display ="flex";
-
 
             if (taskName === '') {
                     alert("Task  can't be empty")
                     return;
                 };
 
-            
             createTask(taskName, dateTask, priorityTask);
             displayTasksList(currentActiveProject);
             priorityBuffer = "Medium";
@@ -87,6 +81,7 @@ let today = new Date();
     export function cancelAddTask(e){    
         const showAddTask = document.querySelector(".showAddTask");
         const addTaskMenu = document.querySelector(".addTaskMenu");
+
         if (e.target.classList.contains('cancelTaskBtn')) {
             addTaskMenu.removeChild(addTaskMenu.lastChild);
             showAddTask.style.display = "flex";
@@ -96,10 +91,8 @@ let today = new Date();
     // Hide Add Task button
     export function hideAddTask(){    
         const showAddTask = document.querySelector(".showAddTask");
-        // const addTaskMenu = document.querySelector(".addTaskMenu");
 
         showAddTask.style.display = "none";
-        // addTaskMenu.style.display = "block";
     };
 
     
@@ -108,7 +101,6 @@ let today = new Date();
 // PROJECT ACTIONS
     // Delete task
     function deleteTask(){
-
         const checkboxIcon = document.getElementsByClassName("checkboxIcon");
     
         for (let i = 0; i < checkboxIcon.length; i++) {
@@ -119,7 +111,6 @@ let today = new Date();
             });
         }
     };
-        // If no tasks in the project, displays: "this project has not tasks"
 
 
 
@@ -136,7 +127,6 @@ let today = new Date();
         const allTasksMain = document.querySelector(".allTasksMain");
         const projectTitleMain = document.querySelector(".projectTitleMain");
         const showAddTask = document.querySelector(".showAddTask");
-
 
         allTasksMain.innerHTML = "";
 
@@ -180,6 +170,7 @@ let today = new Date();
     // Display all tasks if no project active
     export function displayAllTasks() {
         const allTasksMain = document.querySelector(".allTasksMain");
+
         allTasksMain.innerHTML = "";
     
             for(let i = 0; i < allProjects.length; i++){
@@ -196,7 +187,6 @@ let today = new Date();
                     </div>`;
                 }
             };
-        
             priorityCheck();
             deleteTask();
     };
@@ -205,6 +195,7 @@ let today = new Date();
     // Priority color check
     function priorityCheck() {
         const taskPriority = document.querySelectorAll(".taskPriority");
+
         for (let i = 0; i < taskPriority.length; i++){
             if(taskPriority[i].innerHTML == "High"){
                 taskPriority[i].classList.add("highPriorityTaskSelected");
@@ -227,7 +218,6 @@ let today = new Date();
         
         if (dd < 10) dd = '0' + dd;
         if (mm < 10) mm = '0' + mm;
-        
         date = dd + '/' + mm + '/' + yyyy;
         
         return date;

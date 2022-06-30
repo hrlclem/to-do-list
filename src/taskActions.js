@@ -1,8 +1,6 @@
 import {displayAllTasks, hideAddTask, showAddNewTask, confirmAddTask, cancelAddTask} from './tasksFunctions.js';
 
 
-
-
 export default function taskDisplay() { 
 
     const newTaskManagement = document.querySelector(".newTaskManagement");
