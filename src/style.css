@@ -433,6 +433,8 @@ html, body, #content {
         width: 100%;
         border-radius: 5px;
         margin-bottom:6px;
+        box-shadow: 4px 4px 4px rgb(230, 228, 228);
+        z-index: 2;
     }
     .addTasksMain:hover{
         background-color: #b3d9f0;
@@ -467,6 +469,7 @@ html, body, #content {
         width: 100%;
         border-radius: 5px;
         margin-bottom:6px;
+        box-shadow: 4px 4px 4px rgb(230, 228, 228);
     }
 
         .lineOneDiv{
