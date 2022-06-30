@@ -407,7 +407,7 @@ html, body, #content {
             font-size: 14px;
             margin-right: 10px;
             margin-left: 10px;
-            width: 80px;
+            width: 85px;
         }
 
 
@@ -485,7 +485,7 @@ html, body, #content {
                 outline: none;
                 height: 20px;
                 font-family: 'Prompt', sans-serif;
-                color:#03466d;
+                color:#000622;
                 font-weight: 200;
                 font-size: 12px;
                 padding-top: 4px;

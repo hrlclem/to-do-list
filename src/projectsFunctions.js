@@ -1,4 +1,3 @@
-// import { toDate, isToday, isThisWeek, subDays } from 'date-fns';
 import {allProjects} from './index.js';
 import {displayTasksList, hideAddTask} from './tasksFunctions.js';
 

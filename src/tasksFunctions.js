@@ -1,5 +1,6 @@
 import {allProjects} from './index.js';
-import {currentActiveProject} from './projectsFunctions.js';
+import {cancelProjectAdd, currentActiveProject} from './projectsFunctions.js';
+
 
 // Add task button appears only if one project is Active
 
@@ -11,6 +12,7 @@ export function AddTask(taskTitle, dateTask, priorityTask) {
 };
 
 let priorityBuffer = "Medium";
+let today = new Date();
 
 
 
@@ -53,9 +55,17 @@ let priorityBuffer = "Medium";
         const selectDateProjectField = document.querySelector(".selectDateProjectField");
         const showAddTask = document.querySelector(".showAddTask");
 
-        const taskName = taskInputField.value;
-        const dateTask = "01/12/2022";
-        const priorityTask = priorityBuffer;
+        let taskName = taskInputField.value;
+        let dateTask = dateFormating(today);
+        let priorityTask = priorityBuffer;
+
+        let selectedDate = selectedDateFormating(selectDateProjectField.value);
+        console.log(selectedDate);
+
+        // if(dateTask != selectedDate){
+        //     // console.log("checked");
+        //     dateTask = selectedDate;
+        // }
 
         if (e.target.classList.contains('confirmTaskBtn')) {
 
@@ -68,6 +78,7 @@ let priorityBuffer = "Medium";
                     return;
                 };
 
+            
             createTask(taskName, dateTask, priorityTask);
             displayTasksList(currentActiveProject);
         };
@@ -127,9 +138,10 @@ let priorityBuffer = "Medium";
     // Hide Add Task button
     export function hideAddTask(){    
         const showAddTask = document.querySelector(".showAddTask");
-        const addTaskMenu = document.querySelector(".addTaskMenu");
+        // const addTaskMenu = document.querySelector(".addTaskMenu");
 
         showAddTask.style.display = "none";
+        // addTaskMenu.style.display = "block";
     };
 
     
@@ -247,6 +259,38 @@ let priorityBuffer = "Medium";
             }
         };
     }
+
+
+    // Today's date formating 
+    function dateFormating(date) {
+        let yyyy = date.getFullYear();
+        let mm = date.getMonth() + 1;
+        let dd = date.getDate();
+        
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        
+        date = dd + '/' + mm + '/' + yyyy;
+        
+        return date;
+    }
+
+        // Selected date formating
+        function selectedDateFormating(date) {
+            let selectedDate = date.split('-');
+            let yyyy = selectedDate[0];
+            console.log("yyy"+yyyy)
+            let mm = selectedDate[1];
+            console.log("mm"+mm)
+            let dd = selectedDate[2];
+            console.log("dd"+dd)
+
+            
+            date = dd + '/' + mm + '/' + yyyy;
+            
+            return date;
+        }
+
 
 
 
