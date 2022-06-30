@@ -40,9 +40,9 @@ let priorityBuffer = "Medium";
                     <button class='confirmTaskBtn addingTaskBtn'>CONFIRM</button>
                 </div>
             </div>`;
+            prioritySelect();
         };     
         showAddTask.style.display = "none";
-        prioritySelect();
     };
         
     // Confirm adding task

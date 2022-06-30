@@ -350,11 +350,11 @@ html, body, #content {
         padding-left:8px;
     }
         .checkboxIcon{
-            width:20px;
-            filter: invert(56%) sepia(51%) saturate(608%) hue-rotate(167deg) brightness(110%) contrast(99%);
+            width:22px;
+            filter: invert(36%) sepia(51%) saturate(608%) hue-rotate(167deg) brightness(110%) contrast(99%);
         }
         .checkboxIcon:hover{
-            filter: invert(26%) sepia(100%) saturate(811%) hue-rotate(168deg) brightness(100%) contrast(96%);
+            filter: invert(46%) sepia(100%) saturate(811%) hue-rotate(168deg) brightness(100%) contrast(96%);
         }
         .taskNameTitle{
             display: inline-block;
